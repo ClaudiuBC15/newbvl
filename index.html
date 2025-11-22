@@ -1,3 +1,6 @@
+---
+import MainLayout from '../layouts/main.astro';
+---
 
 <MainLayout>
 <style>
@@ -264,7 +267,10 @@ transform: rotate(-45deg) translateY(-9px);
 
 /* Hero Section */
 .hero {
-background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://i.imgur.com/PXozWaf.jpeg');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
 color: white;
 padding: 100px 20px;
 text-align: center;
@@ -874,90 +880,6 @@ color: white;
 
 .testimonials-section .section-subtitle {
 color: rgba(255, 255, 255, 0.8);
-}
-
-.testimonials-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-gap: 30px;
-}
-
-.testimonial-card {
-background: rgba(255, 255, 255, 0.05);
-backdrop-filter: blur(10px);
-padding: 35px;
-border-radius: 20px;
-border: 2px solid rgba(255, 255, 255, 0.1);
-transition: all 0.5s;
-position: relative;
-}
-
-.testimonial-card::before {
-content: '"';
-position: absolute;
-top: -20px;
-left: 30px;
-font-size: 100px;
-color: #dc2626;
-opacity: 0.3;
-font-family: 'Georgia', serif;
-line-height: 1;
-}
-
-.testimonial-card:hover {
-transform: translateY(-10px);
-border-color: #dc2626;
-box-shadow: 0 20px 50px rgba(220, 38, 38, 0.3);
-}
-
-.testimonial-header {
-display: flex;
-align-items: center;
-gap: 20px;
-margin-bottom: 20px;
-}
-
-.testimonial-avatar {
-width: 70px;
-height: 70px;
-border-radius: 50%;
-object-fit: cover;
-border: 3px solid #dc2626;
-box-shadow: 0 5px 15px rgba(220, 38, 38, 0.4);
-}
-
-.testimonial-author-info h4 {
-font-size: 18px;
-font-weight: bold;
-margin-bottom: 5px;
-font-family: 'Montserrat', sans-serif;
-}
-
-.testimonial-category {
-color: #dc2626;
-font-size: 14px;
-font-weight: 600;
-}
-
-.testimonial-rating {
-color: #fbbf24;
-font-size: 20px;
-margin-bottom: 15px;
-}
-
-.testimonial-text {
-font-style: italic;
-line-height: 1.8;
-color: rgba(255, 255, 255, 0.9);
-font-size: 15px;
-position: relative;
-z-index: 1;
-}
-
-.testimonial-date {
-color: rgba(255, 255, 255, 0.5);
-font-size: 12px;
-margin-top: 15px;
 }
 
 /* CTA Section */
@@ -1674,6 +1596,7 @@ display: flex;
 
 .hero {
 padding: 60px 15px;
+background-attachment: scroll;
 }
 
 .hero h1 {
@@ -1749,7 +1672,6 @@ font-size: 14px;
 .stories-grid,
 .categorii-grid,
 .instructori-grid,
-.testimonials-grid,
 .blog-grid {
 grid-template-columns: 1fr;
 gap: 20px;
@@ -1799,6 +1721,10 @@ height: 200px;
 .contact-content {
 grid-template-columns: 1fr;
 gap: 30px;
+}
+
+.locatie-section {
+background-attachment: scroll;
 }
 
 .map-container iframe {
@@ -1917,7 +1843,7 @@ scroll-behavior: smooth;
 <nav class="nav-container">
 <a href="#home" class="logo">
 <img src="https://i.imgur.com/pzRXduP.png" alt="Start Drive BVL Logo" />
-<span class="logo-text">Scoala de Soferie</span>
+<span class="logo-text">START DRIVE</span>
 </a>
 <ul class="nav-menu" id="navMenu">
 <li><a href="#home">Acasă</a></li>
@@ -1983,7 +1909,7 @@ scroll-behavior: smooth;
 </div>
 
 <div class="stat-item">
-<div class="stat-number" data-target="3">0</div>
+<div class="stat-number" data-target="4">0</div>
 <div class="stat-label">Instructori Experți</div>
 </div>
 </div>
@@ -2279,95 +2205,29 @@ scroll-behavior: smooth;
 <p class="instructor-experience">12 ani experiență<br/>Expert trasee urbane<br/>Specialist conducere defensivă</p>
 </div>
 </div>
+
+<div class="instructor-card">
+<img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop" alt="Alexandru Popescu" class="instructor-image" onerror="this.src='https://ui-avatars.com/api/?name=Alexandru+Popescu&size=400&background=dc2626&color=fff&font-size=0.4&bold=true'" />
+<div class="instructor-info">
+<h3 class="instructor-name">Alexandru Popescu</h3>
+<p class="instructor-categories">B, B1, C</p>
+<div class="instructor-rating">⭐⭐⭐⭐⭐ (4.9)</div>
+<p class="instructor-students">✅ 190+ elevi instruiți cu succes</p>
+<p class="instructor-experience">10 ani experiență<br/>Specialist tineri șoferi<br/>Expert condus preventiv</p>
+</div>
+</div>
 </div>
 </div>
 </section>
 
-<!-- Testimonials Section - PUTERNIC! -->
+<!-- Testimonials Section - ELFSIGHT EMBED -->
 <section id="testimoniale" class="section testimonials-section">
 <div class="container">
 <h2 class="section-title">⭐ Ce Spun Absolvenții Noștri</h2>
 <p class="section-subtitle">Peste 500 de recenzii pozitive de la cursanți mulțumiți</p>
 
-<div class="testimonials-grid">
-<div class="testimonial-card">
-<div class="testimonial-header">
-<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Maria Popescu" class="testimonial-avatar" onerror="this.src='https://ui-avatars.com/api/?name=Maria+Popescu&size=100&background=dc2626&color=fff&font-size=0.4&bold=true'" />
-<div class="testimonial-author-info">
-<h4>Maria Popescu</h4>
-<p class="testimonial-category">Categoria B</p>
-</div>
-</div>
-<div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
-<p class="testimonial-text">"Cea mai bună decizie! Am reușit să iau permisul din prima încercare. Instructorul Sergiu a fost extrem de profesionist și răbdător. Mașinile sunt noi și foarte bine întreținute. Recomand cu încredere!"</p>
-<p class="testimonial-date">Promovat acum 2 săptămâni</p>
-</div>
-
-<div class="testimonial-card">
-<div class="testimonial-header">
-<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Ion Mureșan" class="testimonial-avatar" onerror="this.src='https://ui-avatars.com/api/?name=Ion+Muresan&size=100&background=dc2626&color=fff&font-size=0.4&bold=true'" />
-<div class="testimonial-author-info">
-<h4>Ion Mureșan</h4>
-<p class="testimonial-category">Categoria CE</p>
-</div>
-</div>
-<div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
-<p class="testimonial-text">"Am obținut categoria CE pentru a lucra ca șofer internațional. Pregătirea a fost excelentă! Acum câștig 3.000€ pe lună. Mulțumesc START DRIVE pentru că mi-ați schimbat viața!"</p>
-<p class="testimonial-date">Promovat acum 1 lună</p>
-</div>
-
-<div class="testimonial-card">
-<div class="testimonial-header">
-<img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" alt="Ana Radu" class="testimonial-avatar" onerror="this.src='https://ui-avatars.com/api/?name=Ana+Radu&size=100&background=dc2626&color=fff&font-size=0.4&bold=true'" />
-<div class="testimonial-author-info">
-<h4>Ana Radu</h4>
-<p class="testimonial-category">Categoria B</p>
-</div>
-</div>
-<div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
-<p class="testimonial-text">"Program flexibil, instructori prietenoși și metode moderne de predare. Am avut emoții la început, dar echipa m-a susținut constant. Promovat din prima încercare cu 27 de puncte din 29!"</p>
-<p class="testimonial-date">Promovat acum 3 săptămâni</p>
-</div>
-
-<div class="testimonial-card">
-<div class="testimonial-header">
-<img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Andrei Popa" class="testimonial-avatar" onerror="this.src='https://ui-avatars.com/api/?name=Andrei+Popa&size=100&background=dc2626&color=fff&font-size=0.4&bold=true'" />
-<div class="testimonial-author-info">
-<h4>Andrei Popa</h4>
-<p class="testimonial-category">Categoria C</p>
-</div>
-</div>
-<div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
-<p class="testimonial-text">"Pregătire de top pentru categoria C! Acum lucrez la o firmă de transport și câștig foarte bine. Instructorul Sergiu m-a învățat tot ce trebuie să știu despre condusul defensiv și siguranța în trafic."</p>
-<p class="testimonial-date">Promovat acum 1 lună</p>
-</div>
-
-<div class="testimonial-card">
-<div class="testimonial-header">
-<img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop" alt="Cristina Vasile" class="testimonial-avatar" onerror="this.src='https://ui-avatars.com/api/?name=Cristina+Vasile&size=100&background=dc2626&color=fff&font-size=0.4&bold=true'" />
-<div class="testimonial-author-info">
-<h4>Cristina Vasile</h4>
-<p class="testimonial-category">Categoria B</p>
-</div>
-</div>
-<div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
-<p class="testimonial-text">"La 45 de ani am decis să iau permisul. Credeam că e prea târziu, dar instructorul Florin m-a încurajat constant. Acum duc copiii la școală cu mașina mea! Vă mulțumesc din suflet!"</p>
-<p class="testimonial-date">Promovat acum 2 luni</p>
-</div>
-
-<div class="testimonial-card">
-<div class="testimonial-header">
-<img src="https://images.unsplash.com/photo-1463453091185-61582044d556?w=100&h=100&fit=crop" alt="Vlad Ionescu" class="testimonial-avatar" onerror="this.src='https://ui-avatars.com/api/?name=Vlad+Ionescu&size=100&background=dc2626&color=fff&font-size=0.4&bold=true'" />
-<div class="testimonial-author-info">
-<h4>Vlad Ionescu</h4>
-<p class="testimonial-category">Categoria B1</p>
-</div>
-</div>
-<div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
-<p class="testimonial-text">"La 16 ani am luat categoria B1. Acum mă pot deplasa cu ATV-ul oriunde! Instructorul a fost super și mi-a explicat totul foarte clar. Recomand tuturor tinerilor!"</p>
-<p class="testimonial-date">Promovat acum 3 săptămâni</p>
-</div>
-</div>
+<script src="https://elfsightcdn.com/platform.js" async></script>
+<div class="elfsight-app-a4a23199-c20d-4b5f-bd28-8443acc24855" data-elfsight-app-lazy></div>
 
 <div style="text-align: center; margin-top: 50px;">
 <a href="#contact" class="btn btn-primary" style="font-size: 18px; padding: 18px 50px;">🚗 Vreau Și Eu Să Promovez Din Prima!</a>
@@ -2667,7 +2527,7 @@ Te vom contacta în maxim 24 de ore!
 <h3>START DRIVE BVL</h3>
 <p>Școala de șoferi de încredere din Suceava. Oferim cursuri profesionale pentru toate categoriile de permis auto cu instructori experimentați și mașini moderne.</p>
 <div class="social-links">
-<a href="#" class="social-link" title="Facebook">📘</a>
+<a href="https://www.facebook.com/profile.php?id=100090298179249" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook">📘</a>
 <a href="#" class="social-link" title="Instagram">📷</a>
 <a href="#" class="social-link" title="TikTok">🎵</a>
 </div>
@@ -2710,7 +2570,7 @@ Te vom contacta în maxim 24 de ore!
 
 <div class="footer-bottom">
 <p>&copy; 2024 Start Drive BVL. Toate drepturile rezervate. | Autorizație RAR Nr. XXXX | CUI: XXXXXXXXX</p>
-<p>Școala ta de șoferi de încredere din <a href="#home">Suceava</a></p>
+<p>Școala ta de șoferi de încredere din <a href="#home">Suceava</a> | Design & Development by WebFlow</p>
 </div>
 </footer>
 
