@@ -1,43 +1,46 @@
+---
+import MainLayout from '../layouts/main.astro';
+---
 
 <MainLayout>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
 
 body {
-  font-family: 'Poppins', 'Arial', sans-serif;
-  overflow-x: hidden;
+font-family: 'Poppins', 'Arial', sans-serif;
+overflow-x: hidden;
 }
 
 /* Snowflakes - MAI MULTE! */
 .snowflake {
-  position: fixed;
-  top: -10px;
-  z-index: 9999;
-  user-select: none;
-  cursor: default;
-  animation-name: snowfall;
-  animation-duration: 10s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  color: #fff;
-  font-size: 1em;
-  opacity: 0.8;
-  pointer-events: none;
+position: fixed;
+top: -10px;
+z-index: 9999;
+user-select: none;
+cursor: default;
+animation-name: snowfall;
+animation-duration: 10s;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+color: #fff;
+font-size: 1em;
+opacity: 0.8;
+pointer-events: none;
 }
 
 @keyframes snowfall {
-  0% {
-    transform: translateY(0vh) rotate(0deg);
-  }
-  100% {
-    transform: translateY(100vh) rotate(360deg);
-  }
+0% {
+transform: translateY(0vh) rotate(0deg);
+}
+100% {
+transform: translateY(100vh) rotate(360deg);
+}
 }
 
 .snowflake:nth-child(1) { left: 5%; animation-delay: 0s; animation-duration: 10s; font-size: 1.2em; }
@@ -63,1487 +66,1817 @@ body {
 
 /* Moș Crăciun care coboară */
 .santa {
-  position: fixed;
-  top: -100px;
-  right: 10%;
-  font-size: 60px;
-  z-index: 9999;
-  animation: santaFall 15s linear infinite;
-  pointer-events: none;
+position: fixed;
+top: -100px;
+right: 10%;
+font-size: 60px;
+z-index: 9999;
+animation: santaFall 15s linear infinite;
+pointer-events: none;
 }
 
 @keyframes santaFall {
-  0% {
-    top: -100px;
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(10deg);
-  }
-  100% {
-    top: 100vh;
-    transform: rotate(-10deg);
-  }
+0% {
+top: -100px;
+transform: rotate(0deg);
+}
+50% {
+transform: rotate(10deg);
+}
+100% {
+top: 100vh;
+transform: rotate(-10deg);
+}
 }
 
 /* Header / Navigation */
 .header {
-  background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
-  color: white;
-  padding: 15px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4);
-  backdrop-filter: blur(10px);
-  border-bottom: 2px solid rgba(220, 38, 38, 0.3);
+background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+color: white;
+padding: 15px 0;
+position: sticky;
+top: 0;
+z-index: 1000;
+box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4);
+backdrop-filter: blur(10px);
+border-bottom: 2px solid rgba(220, 38, 38, 0.3);
 }
 
 .nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 15px;
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  animation: fadeInDown 0.8s ease;
+display: flex;
+align-items: center;
+gap: 10px;
+animation: fadeInDown 0.8s ease;
 }
 
 @keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+from {
+opacity: 0;
+transform: translateY(-20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
 }
 
 .logo img {
-  height: 50px;
-  width: auto;
-  filter: drop-shadow(0 0 10px rgba(220, 38, 38, 0.5));
-  transition: all 0.3s;
+height: 50px;
+width: auto;
+filter: drop-shadow(0 0 10px rgba(220, 38, 38, 0.5));
+transition: all 0.3s;
 }
 
 .logo img:hover {
-  filter: drop-shadow(0 0 20px rgba(220, 38, 38, 0.8));
-  transform: scale(1.05) rotate(5deg);
+filter: drop-shadow(0 0 20px rgba(220, 38, 38, 0.8));
+transform: scale(1.05) rotate(5deg);
 }
 
 .logo-text {
-  font-size: 20px;
-  font-weight: 800;
-  font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #dc2626 0%, #ff4444 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: 1px;
+font-size: 20px;
+font-weight: 800;
+font-family: 'Montserrat', sans-serif;
+background: linear-gradient(135deg, #dc2626 0%, #ff4444 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+letter-spacing: 1px;
 }
 
 .nav-menu {
-  display: flex;
-  gap: 8px;
-  list-style: none;
+display: flex;
+gap: 8px;
+list-style: none;
+align-items: center;
 }
 
 .nav-menu a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-  transition: all 0.3s ease;
-  font-size: 13px;
-  padding: 10px 20px;
-  border-radius: 30px;
-  position: relative;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+color: white;
+text-decoration: none;
+font-weight: 600;
+font-family: 'Poppins', sans-serif;
+transition: all 0.3s ease;
+font-size: 13px;
+padding: 10px 20px;
+border-radius: 30px;
+position: relative;
+letter-spacing: 0.5px;
+text-transform: uppercase;
+background: rgba(255, 255, 255, 0.05);
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-menu a:hover {
-  background: linear-gradient(135deg, #dc2626 0%, #ff4444 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.4);
-  border-color: rgba(220, 38, 38, 0.5);
+background: linear-gradient(135deg, #dc2626 0%, #ff4444 100%);
+transform: translateY(-2px);
+box-shadow: 0 8px 20px rgba(220, 38, 38, 0.4);
+border-color: rgba(220, 38, 38, 0.5);
 }
 
-.nav-menu a.contact-btn {
-  background: linear-gradient(135deg, #dc2626 0%, #ff4444 100%) !important;
-  border: 2px solid #dc2626 !important;
-  font-weight: 700;
-  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
-  animation: pulse 2s infinite;
+.nav-menu a.cta-btn {
+background: linear-gradient(135deg, #dc2626 0%, #ff4444 100%) !important;
+border: 2px solid #dc2626 !important;
+font-weight: 700;
+box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+animation: pulse 2s infinite;
+padding: 12px 30px !important;
+font-size: 14px !important;
 }
 
 @keyframes pulse {
-  0%, 100% {
-    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
-  }
-  50% {
-    box-shadow: 0 6px 25px rgba(220, 38, 38, 0.6);
-  }
+0%, 100% {
+box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+transform: scale(1);
+}
+50% {
+box-shadow: 0 6px 25px rgba(220, 38, 38, 0.6);
+transform: scale(1.05);
+}
 }
 
-.nav-menu a.contact-btn:hover {
-  background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%) !important;
-  transform: translateY(-3px) scale(1.05) !important;
-  box-shadow: 0 10px 30px rgba(220, 38, 38, 0.6) !important;
+.nav-menu a.cta-btn:hover {
+background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%) !important;
+transform: translateY(-3px) scale(1.08) !important;
+box-shadow: 0 10px 30px rgba(220, 38, 38, 0.6) !important;
+animation: none;
 }
 
 .nav-menu a:active {
-  transform: translateY(0px);
+transform: translateY(0px);
 }
 
 /* Mobile Menu */
 .mobile-menu-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
-  padding: 10px;
-  background: rgba(220, 38, 38, 0.1);
-  border-radius: 10px;
-  border: 2px solid rgba(220, 38, 38, 0.3);
-  transition: all 0.3s;
-  z-index: 1001;
+display: none;
+flex-direction: column;
+gap: 6px;
+cursor: pointer;
+padding: 10px;
+background: rgba(220, 38, 38, 0.1);
+border-radius: 10px;
+border: 2px solid rgba(220, 38, 38, 0.3);
+transition: all 0.3s;
+z-index: 1001;
 }
 
 .mobile-menu-toggle:hover {
-  background: rgba(220, 38, 38, 0.2);
-  border-color: rgba(220, 38, 38, 0.6);
+background: rgba(220, 38, 38, 0.2);
+border-color: rgba(220, 38, 38, 0.6);
 }
 
 .mobile-menu-toggle span {
-  width: 25px;
-  height: 3px;
-  background: linear-gradient(135deg, #dc2626 0%, #ff4444 100%);
-  border-radius: 3px;
-  transition: all 0.3s;
+width: 25px;
+height: 3px;
+background: linear-gradient(135deg, #dc2626 0%, #ff4444 100%);
+border-radius: 3px;
+transition: all 0.3s;
 }
 
 .mobile-menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translateY(9px);
+transform: rotate(45deg) translateY(9px);
 }
 
 .mobile-menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-  transform: translateX(-20px);
+opacity: 0;
+transform: translateX(-20px);
 }
 
 .mobile-menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translateY(-9px);
+transform: rotate(-45deg) translateY(-9px);
 }
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
-  color: white;
-  padding: 80px 20px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+color: white;
+padding: 100px 20px;
+text-align: center;
+position: relative;
+overflow: hidden;
 }
 
 .hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path fill="%23dc2626" fill-opacity="0.1" d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"></path></svg>') repeat-x;
-  background-size: 1200px 120px;
-  opacity: 0.5;
-  animation: wave 10s linear infinite;
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path fill="%23dc2626" fill-opacity="0.1" d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"></path></svg>') repeat-x;
+background-size: 1200px 120px;
+opacity: 0.5;
+animation: wave 10s linear infinite;
 }
 
 @keyframes wave {
-  0% { background-position: 0 0; }
-  100% { background-position: 1200px 0; }
+0% { background-position: 0 0; }
+100% { background-position: 1200px 0; }
 }
 
 .hero-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
+max-width: 1200px;
+margin: 0 auto;
+position: relative;
+z-index: 1;
 }
 
 .hero h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-  font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  font-family: 'Montserrat', sans-serif;
-  animation: fadeInUp 1s ease;
+font-size: 52px;
+margin-bottom: 20px;
+font-weight: bold;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+font-family: 'Montserrat', sans-serif;
+animation: fadeInUp 1s ease;
+line-height: 1.2;
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+from {
+opacity: 0;
+transform: translateY(30px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
 }
 
 .hero h1 .highlight {
-  color: #dc2626;
-  animation: glow 2s ease-in-out infinite;
+color: #dc2626;
+animation: glow 2s ease-in-out infinite;
 }
 
 @keyframes glow {
-  0%, 100% {
-    text-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
-  }
-  50% {
-    text-shadow: 0 0 20px rgba(220, 38, 38, 0.8), 0 0 30px rgba(220, 38, 38, 0.6);
-  }
+0%, 100% {
+text-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+}
+50% {
+text-shadow: 0 0 20px rgba(220, 38, 38, 0.8), 0 0 30px rgba(220, 38, 38, 0.6);
+}
 }
 
 .hero p {
-  font-size: 20px;
-  margin-bottom: 30px;
-  color: #ddd;
-  animation: fadeInUp 1s ease 0.2s both;
+font-size: 22px;
+margin-bottom: 35px;
+color: #ddd;
+animation: fadeInUp 1s ease 0.2s both;
+}
+
+.trust-badges {
+display: flex;
+justify-content: center;
+gap: 30px;
+margin-top: 40px;
+flex-wrap: wrap;
+animation: fadeInUp 1s ease 0.6s both;
+}
+
+.trust-badge {
+display: flex;
+align-items: center;
+gap: 10px;
+background: rgba(255, 255, 255, 0.1);
+padding: 12px 24px;
+border-radius: 50px;
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.trust-badge-icon {
+font-size: 24px;
+}
+
+.trust-badge-text {
+font-size: 14px;
+font-weight: 600;
 }
 
 .cta-buttons {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
-  animation: fadeInUp 1s ease 0.4s both;
+display: flex;
+gap: 15px;
+justify-content: center;
+flex-wrap: wrap;
+animation: fadeInUp 1s ease 0.4s both;
 }
 
 .btn {
-  padding: 14px 35px;
-  font-size: 15px;
-  font-weight: bold;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s;
-  text-decoration: none;
-  display: inline-block;
-  font-family: 'Poppins', sans-serif;
+padding: 16px 40px;
+font-size: 16px;
+font-weight: bold;
+border: none;
+border-radius: 50px;
+cursor: pointer;
+transition: all 0.3s;
+text-decoration: none;
+display: inline-block;
+font-family: 'Poppins', sans-serif;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #dc2626 0%, #ff4444 100%);
-  color: white;
-  position: relative;
-  overflow: hidden;
+background: linear-gradient(135deg, #dc2626 0%, #ff4444 100%);
+color: white;
+position: relative;
+overflow: hidden;
+box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4);
 }
 
 .btn-primary::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s;
+content: '';
+position: absolute;
+top: 50%;
+left: 50%;
+width: 0;
+height: 0;
+border-radius: 50%;
+background: rgba(255, 255, 255, 0.3);
+transform: translate(-50%, -50%);
+transition: width 0.6s, height 0.6s;
 }
 
 .btn-primary:hover::before {
-  width: 300px;
-  height: 300px;
+width: 300px;
+height: 300px;
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(220, 38, 38, 0.4);
+transform: translateY(-3px);
+box-shadow: 0 15px 40px rgba(220, 38, 38, 0.6);
 }
 
 .btn-secondary {
-  background: white;
-  color: #000;
+background: white;
+color: #000;
 }
 
 .btn-secondary:hover {
-  background: #f0f0f0;
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+background: #f0f0f0;
+transform: translateY(-3px) scale(1.05);
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* Stats Section */
 .stats-section {
-  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-  color: white;
-  padding: 60px 20px;
-  position: relative;
-  overflow: hidden;
+background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+color: white;
+padding: 60px 20px;
+position: relative;
+overflow: hidden;
 }
 
 .stats-section::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 50px 50px;
-  animation: moveGrid 20s linear infinite;
+content: '';
+position: absolute;
+top: -50%;
+left: -50%;
+width: 200%;
+height: 200%;
+background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+background-size: 50px 50px;
+animation: moveGrid 20s linear infinite;
 }
 
 @keyframes moveGrid {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(50px, 50px); }
+0% { transform: translate(0, 0); }
+100% { transform: translate(50px, 50px); }
 }
 
 .section {
-  padding: 60px 20px;
+padding: 80px 20px;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
+max-width: 1200px;
+margin: 0 auto;
 }
 
 .section-title {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 15px;
-  color: #000;
-  font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
+text-align: center;
+font-size: 42px;
+margin-bottom: 15px;
+color: #000;
+font-weight: bold;
+font-family: 'Montserrat', sans-serif;
 }
 
 .section-subtitle {
-  text-align: center;
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 40px;
+text-align: center;
+font-size: 18px;
+color: #666;
+margin-bottom: 50px;
 }
 
 .stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 30px;
-  text-align: center;
-  position: relative;
-  z-index: 1;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+gap: 30px;
+text-align: center;
+position: relative;
+z-index: 1;
 }
 
 .stat-item {
-  padding: 15px;
-  transition: transform 0.3s;
+padding: 15px;
+transition: transform 0.3s;
 }
 
 .stat-item:hover {
-  transform: translateY(-10px);
+transform: translateY(-10px);
 }
 
 .stat-number {
-  font-size: 44px;
-  font-weight: bold;
-  margin-bottom: 8px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  font-family: 'Montserrat', sans-serif;
+font-size: 44px;
+font-weight: bold;
+margin-bottom: 8px;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+font-family: 'Montserrat', sans-serif;
 }
 
 .stat-label {
-  font-size: 16px;
-  opacity: 0.9;
+font-size: 16px;
+opacity: 0.9;
+}
+
+/* Success Stories Section */
+.success-stories {
+background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+}
+
+.stories-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 30px;
+margin-bottom: 40px;
+}
+
+.story-card {
+background: white;
+border-radius: 20px;
+overflow: hidden;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+transition: all 0.5s;
+position: relative;
+}
+
+.story-card::before {
+content: '✓';
+position: absolute;
+top: 20px;
+right: 20px;
+width: 50px;
+height: 50px;
+background: linear-gradient(135deg, #dc2626, #ff4444);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 30px;
+font-weight: bold;
+color: white;
+z-index: 2;
+box-shadow: 0 5px 15px rgba(220, 38, 38, 0.4);
+}
+
+.story-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 20px 50px rgba(220, 38, 38, 0.2);
+}
+
+.story-image {
+width: 100%;
+height: 280px;
+object-fit: cover;
+}
+
+.story-content {
+padding: 30px;
+}
+
+.story-name {
+font-size: 22px;
+font-weight: bold;
+color: #000;
+margin-bottom: 5px;
+font-family: 'Montserrat', sans-serif;
+}
+
+.story-category {
+color: #dc2626;
+font-weight: 600;
+margin-bottom: 15px;
+font-size: 14px;
+}
+
+.story-quote {
+font-style: italic;
+color: #333;
+line-height: 1.7;
+margin-bottom: 15px;
+font-size: 15px;
+}
+
+.story-stats {
+display: flex;
+gap: 20px;
+padding-top: 15px;
+border-top: 2px solid #f0f0f0;
+}
+
+.story-stat {
+flex: 1;
+text-align: center;
+}
+
+.story-stat-value {
+font-size: 20px;
+font-weight: bold;
+color: #dc2626;
+font-family: 'Montserrat', sans-serif;
+}
+
+.story-stat-label {
+font-size: 12px;
+color: #666;
+margin-top: 3px;
 }
 
 /* Categorii Section */
 .categorii-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 25px;
 }
 
 .categorie-card {
-  background: white;
-  border: 2px solid #e5e5e5;
-  border-radius: 20px;
-  padding: 30px 25px;
-  text-align: center;
-  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
+background: white;
+border: 2px solid #e5e5e5;
+border-radius: 20px;
+padding: 30px 25px;
+text-align: center;
+transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+position: relative;
+overflow: hidden;
+cursor: pointer;
 }
 
 .categorie-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-  background: linear-gradient(90deg, #dc2626, #ff4444, #dc2626);
-  background-size: 200% 100%;
-  transform: scaleX(0);
-  transition: transform 0.5s;
-  animation: shimmer 3s infinite;
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 5px;
+background: linear-gradient(90deg, #dc2626, #ff4444, #dc2626);
+background-size: 200% 100%;
+transform: scaleX(0);
+transition: transform 0.5s;
+animation: shimmer 3s infinite;
 }
 
 @keyframes shimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+0% { background-position: 200% 0; }
+100% { background-position: -200% 0; }
 }
 
 .categorie-card:hover::before {
-  transform: scaleX(1);
+transform: scaleX(1);
 }
 
 .categorie-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 15px 40px rgba(220, 38, 38, 0.3);
-  border-color: #dc2626;
+transform: translateY(-10px) scale(1.02);
+box-shadow: 0 15px 40px rgba(220, 38, 38, 0.3);
+border-color: #dc2626;
 }
 
 .categorie-icon {
-  font-size: 52px;
-  margin-bottom: 15px;
-  animation: bounce 2s ease-in-out infinite;
+font-size: 52px;
+margin-bottom: 15px;
+animation: bounce 2s ease-in-out infinite;
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-8px); }
 }
 
 .categorie-card:hover .categorie-icon {
-  animation: spin 0.5s ease;
+animation: spin 0.5s ease;
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg) scale(1); }
-  to { transform: rotate(360deg) scale(1.2); }
+from { transform: rotate(0deg) scale(1); }
+to { transform: rotate(360deg) scale(1.2); }
 }
 
 .categorie-card h3 {
-  font-size: 22px;
-  margin-bottom: 12px;
-  color: #000;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
+font-size: 22px;
+margin-bottom: 12px;
+color: #000;
+font-family: 'Montserrat', sans-serif;
+font-weight: 800;
 }
 
 .categorie-card p {
-  color: #666;
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 15px;
+color: #666;
+font-size: 14px;
+line-height: 1.5;
+margin-bottom: 15px;
 }
 
 .categorie-details {
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 2px solid #f0f0f0;
+margin-top: 20px;
+padding-top: 20px;
+border-top: 2px solid #f0f0f0;
 }
 
 .categorie-detail-item {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-  margin-bottom: 10px;
-  color: #333;
-  font-size: 13px;
-  padding: 6px;
-  border-radius: 8px;
-  transition: all 0.3s;
+display: flex;
+align-items: center;
+justify-content: flex-start;
+gap: 10px;
+margin-bottom: 10px;
+color: #333;
+font-size: 13px;
+padding: 6px;
+border-radius: 8px;
+transition: all 0.3s;
 }
 
 .categorie-detail-item:hover {
-  background: rgba(220, 38, 38, 0.05);
-  transform: translateX(5px);
+background: rgba(220, 38, 38, 0.05);
+transform: translateX(5px);
 }
 
 .categorie-detail-item span:first-child {
-  font-size: 18px;
+font-size: 18px;
 }
 
 .categorie-detail-item strong {
-  color: #dc2626;
-  font-weight: 700;
+color: #dc2626;
+font-weight: 700;
 }
 
 .popular-badge {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: linear-gradient(135deg, #dc2626 0%, #ff4444 100%);
-  color: white;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: bold;
-  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
-  animation: pulse 2s infinite;
+position: absolute;
+top: 12px;
+right: 12px;
+background: linear-gradient(135deg, #dc2626 0%, #ff4444 100%);
+color: white;
+padding: 6px 14px;
+border-radius: 20px;
+font-size: 11px;
+font-weight: bold;
+box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+animation: pulse 2s infinite;
 }
 
 .price-tag {
-  margin-top: 15px;
-  padding: 12px;
-  background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(220, 38, 38, 0.05));
-  border-radius: 10px;
-  border: 2px dashed #dc2626;
+margin-top: 15px;
+padding: 12px;
+background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(220, 38, 38, 0.05));
+border-radius: 10px;
+border: 2px dashed #dc2626;
 }
 
 .price-tag .price {
-  font-size: 24px;
-  font-weight: 800;
-  color: #dc2626;
-  font-family: 'Montserrat', sans-serif;
+font-size: 24px;
+font-weight: 800;
+color: #dc2626;
+font-family: 'Montserrat', sans-serif;
 }
 
 .price-tag .price-label {
-  font-size: 12px;
-  color: #666;
-  margin-top: 4px;
+font-size: 12px;
+color: #666;
+margin-top: 4px;
 }
 
 /* Instructori Section */
 .instructori-section {
-  background: #f9f9f9;
+background: #f9f9f9;
 }
 
 .instructori-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 30px;
 }
 
 .instructor-card {
-  background: white;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.5s;
-  position: relative;
+background: white;
+border-radius: 20px;
+overflow: hidden;
+box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+transition: all 0.5s;
+position: relative;
 }
 
 .instructor-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(220, 38, 38, 0.9), rgba(185, 28, 28, 0.9));
-  opacity: 0;
-  transition: opacity 0.5s;
-  pointer-events: none;
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: linear-gradient(135deg, rgba(220, 38, 38, 0.9), rgba(185, 28, 28, 0.9));
+opacity: 0;
+transition: opacity 0.5s;
+pointer-events: none;
 }
 
 .instructor-card:hover::after {
-  opacity: 0.1;
+opacity: 0.1;
 }
 
 .instructor-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(220, 38, 38, 0.3);
+transform: translateY(-10px);
+box-shadow: 0 15px 40px rgba(220, 38, 38, 0.3);
 }
 
 .instructor-image {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  border-bottom: 4px solid #dc2626;
-  transition: transform 0.5s;
+width: 100%;
+height: 280px;
+object-fit: cover;
+border-bottom: 4px solid #dc2626;
+transition: transform 0.5s;
 }
 
 .instructor-card:hover .instructor-image {
-  transform: scale(1.1);
+transform: scale(1.1);
 }
 
 .instructor-info {
-  padding: 25px;
-  text-align: center;
-  position: relative;
-  z-index: 1;
+padding: 25px;
+text-align: center;
+position: relative;
+z-index: 1;
 }
 
 .instructor-name {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 8px;
-  color: #000;
-  font-family: 'Montserrat', sans-serif;
+font-size: 20px;
+font-weight: bold;
+margin-bottom: 8px;
+color: #000;
+font-family: 'Montserrat', sans-serif;
 }
 
 .instructor-categories {
-  color: #dc2626;
-  font-weight: bold;
-  font-size: 14px;
-  margin-bottom: 12px;
+color: #dc2626;
+font-weight: bold;
+font-size: 14px;
+margin-bottom: 12px;
 }
 
 .instructor-rating {
-  color: #fbbf24;
-  font-size: 18px;
-  margin-bottom: 8px;
+color: #fbbf24;
+font-size: 18px;
+margin-bottom: 8px;
 }
 
 .instructor-students {
-  color: #666;
-  font-size: 13px;
-  margin-bottom: 12px;
-  font-weight: 600;
+color: #666;
+font-size: 13px;
+margin-bottom: 12px;
+font-weight: 600;
 }
 
 .instructor-experience {
-  color: #666;
-  font-size: 13px;
-  line-height: 1.5;
+color: #666;
+font-size: 13px;
+line-height: 1.5;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+color: white;
+}
+
+.testimonials-section .section-title {
+color: white;
+}
+
+.testimonials-section .section-subtitle {
+color: rgba(255, 255, 255, 0.8);
+}
+
+.testimonials-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+gap: 30px;
+}
+
+.testimonial-card {
+background: rgba(255, 255, 255, 0.05);
+backdrop-filter: blur(10px);
+padding: 35px;
+border-radius: 20px;
+border: 2px solid rgba(255, 255, 255, 0.1);
+transition: all 0.5s;
+position: relative;
+}
+
+.testimonial-card::before {
+content: '"';
+position: absolute;
+top: -20px;
+left: 30px;
+font-size: 100px;
+color: #dc2626;
+opacity: 0.3;
+font-family: 'Georgia', serif;
+line-height: 1;
+}
+
+.testimonial-card:hover {
+transform: translateY(-10px);
+border-color: #dc2626;
+box-shadow: 0 20px 50px rgba(220, 38, 38, 0.3);
+}
+
+.testimonial-header {
+display: flex;
+align-items: center;
+gap: 20px;
+margin-bottom: 20px;
+}
+
+.testimonial-avatar {
+width: 70px;
+height: 70px;
+border-radius: 50%;
+object-fit: cover;
+border: 3px solid #dc2626;
+box-shadow: 0 5px 15px rgba(220, 38, 38, 0.4);
+}
+
+.testimonial-author-info h4 {
+font-size: 18px;
+font-weight: bold;
+margin-bottom: 5px;
+font-family: 'Montserrat', sans-serif;
+}
+
+.testimonial-category {
+color: #dc2626;
+font-size: 14px;
+font-weight: 600;
+}
+
+.testimonial-rating {
+color: #fbbf24;
+font-size: 20px;
+margin-bottom: 15px;
+}
+
+.testimonial-text {
+font-style: italic;
+line-height: 1.8;
+color: rgba(255, 255, 255, 0.9);
+font-size: 15px;
+position: relative;
+z-index: 1;
+}
+
+.testimonial-date {
+color: rgba(255, 255, 255, 0.5);
+font-size: 12px;
+margin-top: 15px;
+}
+
+/* CTA Section */
+.cta-section {
+background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+color: white;
+padding: 80px 20px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+
+.cta-section::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path fill="%23ffffff" fill-opacity="0.1" d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"></path></svg>') repeat-x;
+background-size: 1200px 120px;
+opacity: 0.5;
+animation: wave 10s linear infinite;
+}
+
+.cta-content {
+max-width: 800px;
+margin: 0 auto;
+position: relative;
+z-index: 1;
+}
+
+.cta-section h2 {
+font-size: 48px;
+margin-bottom: 20px;
+font-family: 'Montserrat', sans-serif;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cta-section p {
+font-size: 22px;
+margin-bottom: 40px;
+opacity: 0.95;
+}
+
+.cta-features {
+display: flex;
+justify-content: center;
+gap: 40px;
+margin-top: 40px;
+flex-wrap: wrap;
+}
+
+.cta-feature {
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.cta-feature-icon {
+font-size: 30px;
+}
+
+.cta-feature-text {
+font-size: 16px;
+font-weight: 600;
 }
 
 /* Galerie Section */
 .galerie-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-bottom: 30px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+margin-bottom: 30px;
 }
 
 .galerie-grid.preview {
-  grid-template-columns: repeat(3, 1fr);
+grid-template-columns: repeat(3, 1fr);
 }
 
 .galerie-image {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 15px;
-  transition: all 0.5s;
-  cursor: pointer;
-  filter: grayscale(20%);
+width: 100%;
+height: 300px;
+object-fit: cover;
+border-radius: 15px;
+transition: all 0.5s;
+cursor: pointer;
+filter: grayscale(20%);
 }
 
 .galerie-image:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4);
-  filter: grayscale(0%);
-  z-index: 10;
+transform: scale(1.05);
+box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4);
+filter: grayscale(0%);
+z-index: 10;
 }
 
 .galerie-image.hidden {
-  display: none;
+display: none;
 }
 
 .view-more-btn {
-  display: block;
-  margin: 30px auto 0;
-  padding: 15px 40px;
-  background: linear-gradient(135deg, #dc2626 0%, #ff4444 100%);
-  color: white;
-  border: none;
-  border-radius: 50px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s;
-  font-family: 'Poppins', sans-serif;
+display: block;
+margin: 30px auto 0;
+padding: 15px 40px;
+background: linear-gradient(135deg, #dc2626 0%, #ff4444 100%);
+color: white;
+border: none;
+border-radius: 50px;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+transition: all 0.3s;
+font-family: 'Poppins', sans-serif;
 }
 
 .view-more-btn:hover {
-  background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(220, 38, 38, 0.4);
+background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%);
+transform: translateY(-3px);
+box-shadow: 0 10px 25px rgba(220, 38, 38, 0.4);
 }
 
 .view-more-btn.hidden {
-  display: none;
+display: none;
 }
 
 /* Locatie Section */
 .locatie-section {
-  background: #f9f9f9;
+background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.imgur.com/G8UzSJS.jpeg');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+position: relative;
+}
+
+.locatie-section::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%);
+pointer-events: none;
+}
+
+.locatie-section .container {
+position: relative;
+z-index: 1;
+}
+
+.locatie-section .section-title {
+color: white !important;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.locatie-section .section-subtitle {
+color: rgba(255, 255, 255, 0.9) !important;
+text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .locatie-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 40px;
+align-items: center;
+}
+
+.locatie-info {
+background: rgba(255, 255, 255, 0.95);
+padding: 40px;
+border-radius: 20px;
+box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+backdrop-filter: blur(10px);
+border: 2px solid rgba(220, 38, 38, 0.3);
 }
 
 .locatie-info h3 {
-  font-size: 28px;
-  margin-bottom: 18px;
-  color: #000;
-  font-family: 'Montserrat', sans-serif;
+font-size: 28px;
+margin-bottom: 18px;
+color: #000;
+font-family: 'Montserrat', sans-serif;
 }
 
 .locatie-info p {
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 12px;
-  line-height: 1.7;
+font-size: 16px;
+color: #666;
+margin-bottom: 12px;
+line-height: 1.7;
 }
 
 .locatie-info strong {
-  color: #dc2626;
+color: #dc2626;
 }
 
 .locatie-info a {
-  color: #dc2626;
-  text-decoration: none;
-  font-weight: bold;
+color: #dc2626;
+text-decoration: none;
+font-weight: bold;
 }
 
 .locatie-info a:hover {
-  text-decoration: underline;
+text-decoration: underline;
 }
 
 .map-container {
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+border-radius: 15px;
+overflow: hidden;
+box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+transition: transform 0.3s;
+border: 3px solid rgba(255, 255, 255, 0.3);
 }
 
 .map-container:hover {
-  transform: scale(1.02);
+transform: scale(1.02);
 }
 
 .map-container iframe {
-  width: 100%;
-  height: 400px;
-  border: none;
-}
-
-/* Reviews Section */
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-}
-
-.review-card {
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s;
-  border-left: 4px solid #dc2626;
-}
-
-.review-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(220, 38, 38, 0.2);
-}
-
-.review-stars {
-  color: #fbbf24;
-  font-size: 20px;
-  margin-bottom: 12px;
-}
-
-.review-text {
-  font-style: italic;
-  color: #333;
-  margin-bottom: 15px;
-  line-height: 1.6;
-  font-size: 14px;
-}
-
-.review-author {
-  color: #dc2626;
-  font-weight: bold;
-  font-size: 14px;
+width: 100%;
+height: 450px;
+border: none;
 }
 
 /* Blog Section */
 .blog-section {
-  background: #f9f9f9;
+background: #f9f9f9;
 }
 
 .blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 25px;
 }
 
 .blog-card {
-  background: white;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s;
-  cursor: pointer;
+background: white;
+border-radius: 15px;
+overflow: hidden;
+box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+transition: all 0.3s;
+cursor: pointer;
 }
 
 .blog-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 35px rgba(220, 38, 38, 0.2);
+transform: translateY(-8px);
+box-shadow: 0 12px 35px rgba(220, 38, 38, 0.2);
 }
 
 .blog-image {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  transition: transform 0.5s;
+width: 100%;
+height: 180px;
+object-fit: cover;
+transition: transform 0.5s;
 }
 
 .blog-card:hover .blog-image {
-  transform: scale(1.1);
+transform: scale(1.1);
 }
 
 .blog-content {
-  padding: 20px;
+padding: 20px;
 }
 
 .blog-date {
-  color: #dc2626;
-  font-size: 13px;
-  font-weight: bold;
-  margin-bottom: 8px;
+color: #dc2626;
+font-size: 13px;
+font-weight: bold;
+margin-bottom: 8px;
 }
 
 .blog-title {
-  font-size: 18px;
-  font-weight: bold;
-  color: #000;
-  margin-bottom: 12px;
-  font-family: 'Montserrat', sans-serif;
+font-size: 18px;
+font-weight: bold;
+color: #000;
+margin-bottom: 12px;
+font-family: 'Montserrat', sans-serif;
 }
 
 .blog-excerpt {
-  color: #666;
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 12px;
+color: #666;
+font-size: 14px;
+line-height: 1.5;
+margin-bottom: 12px;
 }
 
 .blog-link {
-  color: #dc2626;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-  display: inline-block;
-  font-size: 14px;
+color: #dc2626;
+text-decoration: none;
+font-weight: bold;
+transition: color 0.3s;
+display: inline-block;
+font-size: 14px;
 }
 
 .blog-link:hover {
-  color: #b91c1c;
+color: #b91c1c;
 }
 
 /* FAQ Section */
 .faq-section {
-  background: white;
+background: white;
 }
 
 .faq-container {
-  max-width: 900px;
-  margin: 0 auto;
+max-width: 900px;
+margin: 0 auto;
 }
 
 .faq-item {
-  background: #f9f9f9;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  overflow: hidden;
-  border: 2px solid #e5e5e5;
-  transition: all 0.3s;
+background: #f9f9f9;
+border-radius: 10px;
+margin-bottom: 15px;
+overflow: hidden;
+border: 2px solid #e5e5e5;
+transition: all 0.3s;
 }
 
 .faq-item:hover {
-  border-color: #dc2626;
+border-color: #dc2626;
 }
 
 .faq-question {
-  padding: 18px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #000;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  user-select: none;
-  font-family: 'Montserrat', sans-serif;
+padding: 18px 20px;
+font-size: 16px;
+font-weight: bold;
+color: #000;
+cursor: pointer;
+display: flex;
+justify-content: space-between;
+align-items: center;
+user-select: none;
+font-family: 'Montserrat', sans-serif;
 }
 
 .faq-question:hover {
-  color: #dc2626;
+color: #dc2626;
 }
 
 .faq-icon {
-  font-size: 22px;
-  color: #dc2626;
-  transition: transform 0.3s;
-  flex-shrink: 0;
+font-size: 22px;
+color: #dc2626;
+transition: transform 0.3s;
+flex-shrink: 0;
 }
 
 .faq-item.active .faq-icon {
-  transform: rotate(45deg);
+transform: rotate(45deg);
 }
 
 .faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s ease;
 }
 
 .faq-answer-content {
-  padding: 0 20px 18px 20px;
-  color: #666;
-  font-size: 14px;
-  line-height: 1.7;
+padding: 0 20px 18px 20px;
+color: #666;
+font-size: 14px;
+line-height: 1.7;
 }
 
 /* Contact Section */
 .contact-section {
-  background: #000;
-  color: white;
+background: #000;
+color: white;
 }
 
 .contact-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 50px;
 }
 
 .contact-info h3 {
-  font-size: 28px;
-  margin-bottom: 25px;
-  color: #dc2626;
-  font-family: 'Montserrat', sans-serif;
+font-size: 28px;
+margin-bottom: 25px;
+color: #dc2626;
+font-family: 'Montserrat', sans-serif;
 }
 
 .contact-item {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  margin-bottom: 22px;
-  transition: transform 0.3s;
+display: flex;
+align-items: center;
+gap: 18px;
+margin-bottom: 22px;
+transition: transform 0.3s;
 }
 
 .contact-item:hover {
-  transform: translateX(10px);
+transform: translateX(10px);
 }
 
 .contact-icon {
-  font-size: 28px;
-  color: #dc2626;
-  flex-shrink: 0;
+font-size: 28px;
+color: #dc2626;
+flex-shrink: 0;
 }
 
 .contact-details h4 {
-  font-size: 16px;
-  margin-bottom: 4px;
-  color: #fff;
-  font-family: 'Montserrat', sans-serif;
+font-size: 16px;
+margin-bottom: 4px;
+color: #fff;
+font-family: 'Montserrat', sans-serif;
 }
 
 .contact-details p {
-  color: #aaa;
-  font-size: 14px;
+color: #aaa;
+font-size: 14px;
 }
 
 .contact-details a {
-  color: #dc2626;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
+color: #dc2626;
+text-decoration: none;
+font-weight: bold;
+transition: color 0.3s;
 }
 
 .contact-details a:hover {
-  color: #b91c1c;
+color: #b91c1c;
 }
 
 .contact-form {
-  background: #1a1a1a;
-  padding: 35px;
-  border-radius: 15px;
+background: #1a1a1a;
+padding: 35px;
+border-radius: 15px;
 }
 
 .contact-form h3 {
-  font-size: 24px;
-  margin-bottom: 22px;
-  color: #dc2626;
-  font-family: 'Montserrat', sans-serif;
+font-size: 24px;
+margin-bottom: 22px;
+color: #dc2626;
+font-family: 'Montserrat', sans-serif;
 }
 
 .form-group {
-  margin-bottom: 18px;
+margin-bottom: 18px;
 }
 
 .form-group label {
-  display: block;
-  margin-bottom: 7px;
-  font-size: 13px;
-  color: #ddd;
+display: block;
+margin-bottom: 7px;
+font-size: 13px;
+color: #ddd;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
-  width: 100%;
-  padding: 11px 14px;
-  border: 1px solid #333;
-  background: #000;
-  color: white;
-  border-radius: 8px;
-  font-size: 14px;
-  transition: border-color 0.3s;
-  font-family: 'Poppins', sans-serif;
+width: 100%;
+padding: 11px 14px;
+border: 1px solid #333;
+background: #000;
+color: white;
+border-radius: 8px;
+font-size: 14px;
+transition: border-color 0.3s;
+font-family: 'Poppins', sans-serif;
 }
 
 .form-group select {
-  cursor: pointer;
+cursor: pointer;
 }
 
 .form-group select option {
-  background: #000;
-  color: white;
+background: #000;
+color: white;
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-  outline: none;
-  border-color: #dc2626;
+outline: none;
+border-color: #dc2626;
 }
 
 .form-group textarea {
-  resize: vertical;
-  min-height: 100px;
+resize: vertical;
+min-height: 100px;
 }
 
 .submit-btn {
-  width: 100%;
-  padding: 13px;
-  background: #dc2626;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s;
-  font-family: 'Poppins', sans-serif;
+width: 100%;
+padding: 13px;
+background: #dc2626;
+color: white;
+border: none;
+border-radius: 8px;
+font-size: 15px;
+font-weight: bold;
+cursor: pointer;
+transition: all 0.3s;
+font-family: 'Poppins', sans-serif;
 }
 
 .submit-btn:hover {
-  background: #b91c1c;
-  transform: translateY(-2px);
+background: #b91c1c;
+transform: translateY(-2px);
 }
 
 /* Footer */
 .footer {
-  background: #000;
-  color: #aaa;
-  padding: 50px 20px 15px 20px;
-  border-top: 1px solid #333;
+background: #000;
+color: #aaa;
+padding: 50px 20px 15px 20px;
+border-top: 1px solid #333;
 }
 
 .footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 35px;
-  margin-bottom: 35px;
+max-width: 1200px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 35px;
+margin-bottom: 35px;
 }
 
 .footer-section h3 {
-  color: #dc2626;
-  font-size: 18px;
-  margin-bottom: 18px;
-  font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
+color: #dc2626;
+font-size: 18px;
+margin-bottom: 18px;
+font-weight: bold;
+font-family: 'Montserrat', sans-serif;
 }
 
 .footer-section p {
-  line-height: 1.7;
-  margin-bottom: 12px;
-  font-size: 13px;
+line-height: 1.7;
+margin-bottom: 12px;
+font-size: 13px;
 }
 
 .footer-section ul {
-  list-style: none;
+list-style: none;
 }
 
 .footer-section ul li {
-  margin-bottom: 10px;
+margin-bottom: 10px;
 }
 
 .footer-section ul li a {
-  color: #aaa;
-  text-decoration: none;
-  transition: color 0.3s;
-  font-size: 13px;
+color: #aaa;
+text-decoration: none;
+transition: color 0.3s;
+font-size: 13px;
 }
 
 .footer-section ul li a:hover {
-  color: #dc2626;
+color: #dc2626;
 }
 
 .social-links {
-  display: flex;
-  gap: 12px;
-  margin-top: 12px;
+display: flex;
+gap: 12px;
+margin-top: 12px;
 }
 
 .social-link {
-  width: 38px;
-  height: 38px;
-  background: #1a1a1a;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #dc2626;
-  text-decoration: none;
-  font-size: 18px;
-  transition: all 0.3s;
+width: 38px;
+height: 38px;
+background: #1a1a1a;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #dc2626;
+text-decoration: none;
+font-size: 18px;
+transition: all 0.3s;
 }
 
 .social-link:hover {
-  background: #dc2626;
-  color: white;
-  transform: translateY(-3px) rotate(360deg);
+background: #dc2626;
+color: white;
+transform: translateY(-3px) rotate(360deg);
 }
 
 .footer-bottom {
-  text-align: center;
-  padding-top: 25px;
-  border-top: 1px solid #333;
-  font-size: 12px;
+text-align: center;
+padding-top: 25px;
+border-top: 1px solid #333;
+font-size: 12px;
 }
 
 .footer-bottom p {
-  margin-bottom: 8px;
+margin-bottom: 8px;
 }
 
 .footer-bottom a {
-  color: #dc2626;
-  text-decoration: none;
+color: #dc2626;
+text-decoration: none;
 }
 
 .footer-bottom a:hover {
-  text-decoration: underline;
+text-decoration: underline;
 }
 
 /* Modal pentru bloguri */
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 10000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.8);
+display: none;
+position: fixed;
+z-index: 10000;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0,0,0,0.8);
 }
 
 .modal.show {
-  display: block;
-  animation: fadeIn 0.3s;
+display: block;
+animation: fadeIn 0.3s;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+from { opacity: 0; }
+to { opacity: 1; }
 }
 
 .modal-content {
-  background-color: #fefefe;
-  margin: 5% auto;
-  padding: 30px;
-  border-radius: 15px;
-  width: 90%;
-  max-width: 800px;
-  position: relative;
-  animation: slideDown 0.5s;
+background-color: #fefefe;
+margin: 5% auto;
+padding: 30px;
+border-radius: 15px;
+width: 90%;
+max-width: 800px;
+position: relative;
+animation: slideDown 0.5s;
 }
 
 @keyframes slideDown {
-  from { transform: translateY(-50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+from { transform: translateY(-50px); opacity: 0; }
+to { transform: translateY(0); opacity: 1; }
 }
 
 .modal-close {
-  color: #aaa;
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 35px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s;
+color: #aaa;
+position: absolute;
+top: 15px;
+right: 20px;
+font-size: 35px;
+font-weight: bold;
+cursor: pointer;
+transition: all 0.3s;
 }
 
 .modal-close:hover {
-  color: #dc2626;
-  transform: rotate(90deg);
+color: #dc2626;
+transform: rotate(90deg);
 }
 
 .modal-image {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 25px;
+width: 100%;
+height: 250px;
+object-fit: cover;
+border-radius: 10px;
+margin-bottom: 25px;
 }
 
 .modal-title {
-  font-size: 28px;
-  color: #000;
-  margin-bottom: 12px;
-  font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
+font-size: 28px;
+color: #000;
+margin-bottom: 12px;
+font-weight: bold;
+font-family: 'Montserrat', sans-serif;
 }
 
 .modal-date {
-  color: #dc2626;
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 25px;
+color: #dc2626;
+font-size: 14px;
+font-weight: bold;
+margin-bottom: 25px;
 }
 
 .modal-text {
-  color: #333;
-  font-size: 16px;
-  line-height: 1.7;
-  margin-bottom: 18px;
+color: #333;
+font-size: 16px;
+line-height: 1.7;
+margin-bottom: 18px;
 }
 
 /* Responsive Mobile */
 @media (max-width: 768px) {
-  .nav-menu {
-    display: none;
-    position: fixed;
-    top: 70px;
-    left: 0;
-    right: 0;
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-    flex-direction: column;
-    padding: 20px;
-    gap: 12px;
-    border-top: 2px solid #dc2626;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
-    max-height: calc(100vh - 70px);
-    overflow-y: auto;
-  }
-
-  .nav-menu.active {
-    display: flex;
-  }
-
-  .nav-menu a {
-    width: 100%;
-    text-align: center;
-    padding: 14px 20px;
-    font-size: 14px;
-  }
-
-  .mobile-menu-toggle {
-    display: flex;
-  }
-  
-  .hero {
-    padding: 60px 15px;
-  }
-
-  .hero h1 {
-    font-size: 32px;
-    margin-bottom: 15px;
-    line-height: 1.2;
-  }
-  
-  .hero p {
-    font-size: 16px;
-    margin-bottom: 25px;
-  }
-
-  .cta-buttons {
-    flex-direction: column;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-
-  .btn {
-    width: 100%;
-    padding: 14px 25px;
-  }
-
-  .stats-section {
-    padding: 40px 15px;
-  }
-  
-  .section {
-    padding: 40px 15px;
-  }
-
-  .section-title {
-    font-size: 28px;
-    margin-bottom: 12px;
-  }
-
-  .section-subtitle {
-    font-size: 14px;
-    margin-bottom: 30px;
-  }
-
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .stat-number {
-    font-size: 36px;
-  }
-
-  .stat-label {
-    font-size: 14px;
-  }
-
-  .categorii-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .categorie-card {
-    padding: 25px 20px;
-  }
-
-  .categorie-icon {
-    font-size: 48px;
-    margin-bottom: 12px;
-  }
-
-  .categorie-card h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-
-  .categorie-card p {
-    font-size: 13px;
-  }
-
-  .categorie-detail-item {
-    font-size: 12px;
-    gap: 8px;
-  }
-
-  .price-tag .price {
-    font-size: 22px;
-  }
-
-  .instructori-grid,
-  .reviews-grid,
-  .blog-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .galerie-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-
-  .galerie-grid.preview {
-    grid-template-columns: 1fr;
-  }
-
-  .galerie-image {
-    height: 200px;
-  }
-
-  .locatie-content,
-  .contact-content {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .map-container iframe {
-    height: 300px;
-  }
-
-  .contact-form {
-    padding: 25px;
-  }
-
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .modal-content {
-    width: 95%;
-    padding: 20px;
-    margin: 10% auto 5% auto;
-  }
-
-  .modal-image {
-    height: 200px;
-  }
-
-  .modal-title {
-    font-size: 22px;
-  }
-
-  .modal-text {
-    font-size: 14px;
-  }
-
-  .faq-question {
-    font-size: 14px;
-    padding: 15px 18px;
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .faq-question span:first-child {
-    flex: 1;
-  }
-
-  .faq-icon {
-    font-size: 20px;
-  }
-
-  .logo img {
-    height: 45px;
-  }
-
-  .logo-text {
-    font-size: 18px;
-  }
-
-  /* Smooth scroll offset for mobile */
-  html {
-    scroll-padding-top: 70px;
-  }
-
-  /* Mos Craciun mai mic pe mobil */
-  .santa {
-    font-size: 40px;
-    right: 5%;
-  }
+.nav-menu {
+display: none;
+position: fixed;
+top: 70px;
+left: 0;
+right: 0;
+background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+flex-direction: column;
+padding: 20px;
+gap: 12px;
+border-top: 2px solid #dc2626;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+max-height: calc(100vh - 70px);
+overflow-y: auto;
 }
 
-/* Smooth Scroll */
+.nav-menu.active {
+display: flex;
+}
+
+.nav-menu a {
+width: 100%;
+text-align: center;
+padding: 14px 20px;
+font-size: 14px;
+}
+
+.mobile-menu-toggle {
+display: flex;
+}
+
+.hero {
+padding: 60px 15px;
+}
+
+.hero h1 {
+font-size: 32px;
+margin-bottom: 15px;
+line-height: 1.2;
+}
+
+.hero p {
+font-size: 16px;
+margin-bottom: 25px;
+}
+
+.trust-badges {
+gap: 15px;
+}
+
+.trust-badge {
+padding: 10px 18px;
+}
+
+.trust-badge-icon {
+font-size: 20px;
+}
+
+.trust-badge-text {
+font-size: 12px;
+}
+
+.cta-buttons {
+flex-direction: column;
+width: 100%;
+max-width: 300px;
+margin: 0 auto;
+}
+
+.btn {
+width: 100%;
+padding: 14px 25px;
+}
+
+.stats-section {
+padding: 40px 15px;
+}
+
+.section {
+padding: 50px 15px;
+}
+
+.section-title {
+font-size: 32px;
+margin-bottom: 12px;
+}
+
+.section-subtitle {
+font-size: 16px;
+margin-bottom: 40px;
+}
+
+.stats-grid {
+grid-template-columns: repeat(2, 1fr);
+gap: 20px;
+}
+
+.stat-number {
+font-size: 36px;
+}
+
+.stat-label {
+font-size: 14px;
+}
+
+.stories-grid,
+.categorii-grid,
+.instructori-grid,
+.testimonials-grid,
+.blog-grid {
+grid-template-columns: 1fr;
+gap: 20px;
+}
+
+.categorie-card {
+padding: 25px 20px;
+}
+
+.categorie-icon {
+font-size: 48px;
+margin-bottom: 12px;
+}
+
+.categorie-card h3 {
+font-size: 20px;
+margin-bottom: 10px;
+}
+
+.categorie-card p {
+font-size: 13px;
+}
+
+.categorie-detail-item {
+font-size: 12px;
+gap: 8px;
+}
+
+.price-tag .price {
+font-size: 22px;
+}
+
+.galerie-grid {
+grid-template-columns: repeat(2, 1fr);
+gap: 12px;
+}
+
+.galerie-grid.preview {
+grid-template-columns: 1fr;
+}
+
+.galerie-image {
+height: 200px;
+}
+
+.locatie-content,
+.contact-content {
+grid-template-columns: 1fr;
+gap: 30px;
+}
+
+.map-container iframe {
+height: 300px;
+}
+
+.contact-form {
+padding: 25px;
+}
+
+.cta-section h2 {
+font-size: 32px;
+}
+
+.cta-section p {
+font-size: 18px;
+}
+
+.cta-features {
+gap: 20px;
+}
+
+.cta-feature {
+flex-direction: column;
+text-align: center;
+}
+
+.footer-content {
+grid-template-columns: 1fr;
+gap: 25px;
+}
+
+.modal-content {
+width: 95%;
+padding: 20px;
+margin: 10% auto 5% auto;
+}
+
+.modal-image {
+height: 200px;
+}
+
+.modal-title {
+font-size: 22px;
+}
+
+.modal-text {
+font-size: 14px;
+}
+
+.faq-question {
+font-size: 14px;
+padding: 15px 18px;
+align-items: flex-start;
+text-align: left;
+}
+
+.faq-question span:first-child {
+flex: 1;
+}
+
+.faq-icon {
+font-size: 20px;
+}
+
+.logo img {
+height: 45px;
+}
+
+.logo-text {
+font-size: 18px;
+}
+
 html {
-  scroll-behavior: smooth;
+scroll-padding-top: 70px;
+}
+
+.santa {
+font-size: 40px;
+right: 5%;
+}
+}
+
+html {
+scroll-behavior: smooth;
 }
 </style>
 
@@ -1574,883 +1907,1027 @@ html {
 
 <!-- Header -->
 <header class="header">
-  <nav class="nav-container">
-    <div class="logo">
-      <img src="https://i.imgur.com/G5IHJr2.png" alt="Start Drive BVL Logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%23dc2626%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2240%22 fill=%22white%22 font-weight=%22bold%22%3ESD%3C/text%3E%3C/svg%3E'" />
-      <span class="logo-text">START DRIVE</span>
-    </div>
-    <ul class="nav-menu" id="navMenu">
-      <li><a href="#home">Acasă</a></li>
-      <li><a href="#categorii">Categorii</a></li>
-      <li><a href="#instructori">Instructori</a></li>
-      <li><a href="#galerie">Galerie</a></li>
-      <li><a href="#blog">Blog</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#contact" class="contact-btn">📞 Contact</a></li>
-    </ul>
-    <div class="mobile-menu-toggle" id="mobileMenuToggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </nav>
+<nav class="nav-container">
+<div class="logo">
+<img src="https://i.imgur.com/G5IHJr2.png" alt="Start Drive BVL Logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%23dc2626%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2240%22 fill=%22white%22 font-weight=%22bold%22%3ESD%3C/text%3E%3C/svg%3E'" />
+<span class="logo-text">START DRIVE</span>
+</div>
+<ul class="nav-menu" id="navMenu">
+<li><a href="#home">Acasă</a></li>
+<li><a href="#categorii">Categorii</a></li>
+<li><a href="#instructori">Instructori</a></li>
+<li><a href="#testimoniale">Testimoniale</a></li>
+<li><a href="#contact" class="cta-btn">🚗 Înscrie-te Acum</a></li>
+</ul>
+<div class="mobile-menu-toggle" id="mobileMenuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</nav>
 </header>
 
 <!-- Hero Section -->
 <section id="home" class="hero">
-  <div class="hero-content">
-    <h1>Obține-ți <span class="highlight">Permisul Auto</span><br/>cu Încredere!</h1>
-    <p>Școala de șoferi de încredere din Suceava - Instructori profesioniști, mașini moderne</p>
-    <div class="cta-buttons">
-      <a href="#contact" class="btn btn-primary">Înscrie-te Acum</a>
-      <a href="#categorii" class="btn btn-secondary">Vezi Categorii</a>
-    </div>
-  </div>
+<div class="hero-content">
+<h1>Obține-ți <span class="highlight">Permisul Auto</span><br/>cu Încredere!</h1>
+<p>Școala de șoferi #1 din Suceava - Peste 500 de absolvenți fericiți!</p>
+<div class="cta-buttons">
+<a href="#contact" class="btn btn-primary">🚗 Înscrie-te Acum - Locuri Limitate!</a>
+<a href="tel:0744420905" class="btn btn-secondary">📞 Sună Acum: 0744 420 905</a>
+</div>
+<div class="trust-badges">
+<div class="trust-badge">
+<span class="trust-badge-icon">✓</span>
+<span class="trust-badge-text">85% Rată Succes</span>
+</div>
+<div class="trust-badge">
+<span class="trust-badge-icon">⭐</span>
+<span class="trust-badge-text">500+ Absolvenți</span>
+</div>
+<div class="trust-badge">
+<span class="trust-badge-icon">🏆</span>
+<span class="trust-badge-text">20 Ani Experiență</span>
+</div>
+</div>
+</div>
 </section>
 
 <!-- Stats Section -->
 <section class="stats-section">
-  <div class="container">
-    <h2 class="section-title" style="color: white;">De Ce Să Ne Alegi?</h2>
-    <p class="section-subtitle" style="color: rgba(255,255,255,0.8); margin-bottom: 30px;">Cifre care vorbesc despre calitatea noastră</p>
-    
-    <div class="stats-grid">
-      <div class="stat-item">
-        <div class="stat-number" data-target="500">0</div>
-        <div class="stat-label">Absolvenți</div>
-      </div>
-      
-      <div class="stat-item">
-        <div class="stat-number" data-target="85">0</div>
-        <div class="stat-label">Rată de Succes (%)</div>
-      </div>
-      
-      <div class="stat-item">
-        <div class="stat-number" data-target="20">0</div>
-        <div class="stat-label">Ani Experiență</div>
-      </div>
-      
-      <div class="stat-item">
-        <div class="stat-number" data-target="3">0</div>
-        <div class="stat-label">Instructori Experți</div>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<h2 class="section-title" style="color: white;">De Ce Să Ne Alegi?</h2>
+<p class="section-subtitle" style="color: rgba(255,255,255,0.8); margin-bottom: 30px;">Cifre care vorbesc despre calitatea noastră</p>
+
+<div class="stats-grid">
+<div class="stat-item">
+<div class="stat-number" data-target="500">0</div>
+<div class="stat-label">Absolvenți Fericiți</div>
+</div>
+
+<div class="stat-item">
+<div class="stat-number" data-target="85">0</div>
+<div class="stat-label">Rată de Succes (%)</div>
+</div>
+
+<div class="stat-item">
+<div class="stat-number" data-target="20">0</div>
+<div class="stat-label">Ani Experiență</div>
+</div>
+
+<div class="stat-item">
+<div class="stat-number" data-target="3">0</div>
+<div class="stat-label">Instructori Experți</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Success Stories Section -->
+<section class="section success-stories">
+<div class="container">
+<h2 class="section-title">🎉 Success Stories - Absolvenți Fericiți</h2>
+<p class="section-subtitle">Povești reale de succes de la cursanții noștri</p>
+
+<div class="stories-grid">
+<div class="story-card">
+<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop" alt="Ana Maria" class="story-image" onerror="this.src='https://ui-avatars.com/api/?name=Ana+Maria&size=400&background=dc2626&color=fff&font-size=0.4&bold=true'" />
+<div class="story-content">
+<h3 class="story-name">Ana Maria Popescu</h3>
+<p class="story-category">Categoria B - Promovat Prima Încercare ✓</p>
+<p class="story-quote">"Am reușit să iau permisul din prima încercare datorită echipei START DRIVE! Instructorul meu, Sergiu, a fost extrem de răbdător și profesionist. Recomand cu încredere!"</p>
+<div class="story-stats">
+<div class="story-stat">
+  <div class="story-stat-value">2 luni</div>
+  <div class="story-stat-label">Durata curs</div>
+</div>
+<div class="story-stat">
+  <div class="story-stat-value">100%</div>
+  <div class="story-stat-label">La examen</div>
+</div>
+<div class="story-stat">
+  <div class="story-stat-value">⭐⭐⭐⭐⭐</div>
+  <div class="story-stat-label">Rating</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="story-card">
+<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Mihai Alexandru" class="story-image" onerror="this.src='https://ui-avatars.com/api/?name=Mihai+Alexandru&size=400&background=dc2626&color=fff&font-size=0.4&bold=true'" />
+<div class="story-content">
+<h3 class="story-name">Mihai Alexandru</h3>
+<p class="story-category">Categoria CE - Șofer Profesionist ✓</p>
+<p class="story-quote">"Am obținut categoria CE pentru a lucra ca șofer internațional. Acum câștig 3.000€/lună! Mulțumiri echipei START DRIVE pentru pregătirea excelentă!"</p>
+<div class="story-stats">
+<div class="story-stat">
+  <div class="story-stat-value">3 luni</div>
+  <div class="story-stat-label">Durata curs</div>
+</div>
+<div class="story-stat">
+  <div class="story-stat-value">3.000€</div>
+  <div class="story-stat-label">Salariu/lună</div>
+</div>
+<div class="story-stat">
+  <div class="story-stat-value">⭐⭐⭐⭐⭐</div>
+  <div class="story-stat-label">Rating</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="story-card">
+<img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop" alt="Elena Ionescu" class="story-image" onerror="this.src='https://ui-avatars.com/api/?name=Elena+Ionescu&size=400&background=dc2626&color=fff&font-size=0.4&bold=true'" />
+<div class="story-content">
+<h3 class="story-name">Elena Ionescu</h3>
+<p class="story-category">Categoria B - Mama Mândră ✓</p>
+<p class="story-quote">"La 45 de ani am decis să iau permisul. Credeam că e prea târziu, dar echipa m-a încurajat constant. Acum duc copiii la școală cu mașina mea!"</p>
+<div class="story-stats">
+<div class="story-stat">
+  <div class="story-stat-value">3 luni</div>
+  <div class="story-stat-label">Durata curs</div>
+</div>
+<div class="story-stat">
+  <div class="story-stat-value">100%</div>
+  <div class="story-stat-label">La examen</div>
+</div>
+<div class="story-stat">
+  <div class="story-stat-value">⭐⭐⭐⭐⭐</div>
+  <div class="story-stat-label">Rating</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div style="text-align: center; margin-top: 40px;">
+<a href="#contact" class="btn btn-primary">🚗 Vreau Și Eu Să Am Succes!</a>
+</div>
+</div>
 </section>
 
 <!-- Categorii Section -->
 <section id="categorii" class="section">
-  <div class="container">
-    <h2 class="section-title">Categorii de Permise</h2>
-    <p class="section-subtitle">Oferim cursuri pentru toate categoriile de permis auto</p>
-    
-    <div class="categorii-grid">
-      <div class="categorie-card">
-        <span class="popular-badge">CEL MAI POPULAR</span>
-        <div class="categorie-icon">🚗</div>
-        <h3>Categoria B</h3>
-        <p>Permis standard pentru autoturisme și vehicule ușoare cu masa totală maximă autorizată de până la 3.5 tone</p>
-        <div class="categorie-details">
-          <div class="categorie-detail-item">
-            <span>📚</span>
-            <span><strong>30 ore</strong> curs legislație rutieră</span>
-          </div>
-          <div class="categorie-detail-item">
-            <span>🚗</span>
-            <span><strong>30 ore</strong> instrucție practică</span>
-          </div>
-          <div class="categorie-detail-item">
-            <span>📅</span>
-            <span>Durată medie: <strong>2-3 luni</strong></span>
-          </div>
-          <div class="categorie-detail-item">
-            <span>🎯</span>
-            <span>Vârstă minimă: <strong>18 ani</strong></span>
-          </div>
-          <div class="categorie-detail-item">
-            <span>👥</span>
-            <span>Maxim <strong>8 pasageri + șofer</strong></span>
-          </div>
-          <div class="categorie-detail-item">
-            <span>📦</span>
-            <span>Remorcă până la <strong>750 kg</strong></span>
-          </div>
-        </div>
-        <div class="price-tag">
-          <div class="price">De la 2.500 Lei</div>
-          <div class="price-label">*Prețul include toate materialele</div>
-        </div>
-      </div>
-      
-      <div class="categorie-card">
-        <span class="popular-badge">🔥 PENTRU TINERI</span>
-        <div class="categorie-icon">🛵</div>
-        <h3>Categoria B1</h3>
-        <p>Permis pentru conducerea cvadriciclurilor ușoare și ATV-uri, ideal pentru tinerii de 16 ani</p>
-        <div class="categorie-details">
-          <div class="categorie-detail-item">
-            <span>📚</span>
-            <span><strong>20 ore</strong> teorie</span>
-          </div>
-          <div class="categorie-detail-item">
-            <span>🛵</span>
-            <span><strong>15 ore</strong> practică</span>
-          </div>
-          <div class="categorie-detail-item">
-            <span>📅</span>
-            <span>Durată: <strong>1-2 luni</strong></span>
-          </div>
-          <div class="categorie-detail-item">
-            <span>🎯</span>
-            <span>Vârstă minimă: <strong>16 ani</strong></span>
-          </div>
-          <div class="categorie-detail-item">
-            <span>⚙️</span>
-            <span>Cvadricicluri până la <strong>400 kg</strong></span>
-          </div>
-          <div class="categorie-detail-item">
-            <span>⚡</span>
-            <span>Putere maximă: <strong>15 kW</strong></span>
-          </div>
-        </div>
-        <div class="price-tag">
-          <div class="price">De la 1.800 Lei</div>
-          <div class="price-label">*Cel mai bun prim permis</div>
-        </div>
-      </div>
-      
-      <div class="categorie-card">
-        <div class="categorie-icon">🚙</div>
-        <h3>Categoria BE</h3>
-        <p>Extindere pentru autoturisme cu remorcă sau rulotă peste 750 kg, perfect pentru călătorii</p>
-        <div class="categorie-details">
-          <div class="categorie-detail-item">
-            <span>📚</span>
-            <span><strong>10 ore</strong> teorie specifică</span>
-          </div>
-          <div class="categorie-detail-item">
-            <span>🚙</span>
-            <span><strong>15 ore</strong> practică cu remorcă</span>
-          </div>
-          <div class="categorie-detail-item">
-            <span>📅</span>
-            <span>Durată: <strong>1-2 luni</strong></span>
-          </div>
-          <div class="categorie-detail-item">
-            <span>⚠️</span>
-            <span>Necesar: <strong>Permis Categoria B</strong></span>
-          </div>
-          <div class="categorie-detail-item">
-            <span>📦</span>
-            <span>Remorcă până la <strong>3.5 tone</strong></span>
-          </div>
-          <div class="categorie-detail-item">
-            <span>🏕️</span>
-            <span>Ideal pentru <strong>rulote și campere</strong></span>
-          </div>
-        </div>
-        <div class="price-tag">
-          <div class="price">De la 1.500 Lei</div>
-          <div class="price-label">*Necesită categoria B</div>
-        </div>
-      </div>
-      
-      <div class="categorie-card">
-        <div class="categorie-icon">🚚</div>
-        <h3>Categoria C</h3>
-        <p>Permis profesional pentru camioane și vehicule grele peste 3.5 tone, deschide oportunități de carieră</p>
-        <div class="categorie-details">
-          <div class="categorie-detail-item">
-            <span>📚</span>
-            <span><strong>28 ore</strong> teorie avansată</span>
-          </div>
-          <div class="categorie-detail-item">
-            <span>🚚</span>
-            <span><strong>30 ore</strong> practică specializată</span>
-          </div>
-          <div class="categorie-detail-item">
-            <span>📅</span>
-            <span>Durată: <strong>2-3 luni</strong></span>
-          </div>
-          <div class="categorie-detail-item">
-            <span>🎯</span>
-            <span>Vârstă minimă: <strong>21 ani</strong></span>
-          </div>
-          <div class="categorie-detail-item">
-            <span>💼</span>
-            <span>Ideal pentru <strong>carieră în transport</strong></span>
-          </div>
-          <div class="categorie-detail-item">
-            <span>📦</span>
-            <span>Vehicule peste <strong>3.5 tone</strong></span>
-          </div>
-        </div>
-        <div class="price-tag">
-          <div class="price">De la 3.200 Lei</div>
-          <div class="price-label">*Investiție în carieră</div>
-        </div>
-      </div>
-      
-      <div class="categorie-card">
-        <div class="categorie-icon">🚛</div>
-        <h3>Categoria CE</h3>
-        <p>Permis premium pentru TIR-uri și transport internațional, cel mai solicitat în industrie</p>
-        <div class="categorie-details">
-          <div class="categorie-detail-item">
-            <span>📚</span>
-            <span><strong>20 ore</strong> legislație internațională</span>
-          </div>
-          <div class="categorie-detail-item">
-            <span>🚛</span>
-            <span><strong>25 ore</strong> instrucție TIR</span>
-          </div>
-          <div class="categorie-detail-item">
-            <span>📅</span>
-            <span>Durată: <strong>2-3 luni</strong></span>
-          </div>
-          <div class="categorie-detail-item">
-            <span>⚠️</span>
-            <span>Necesar: <strong>Permis Categoria C</strong></span>
-          </div>
-          <div class="categorie-detail-item">
-            <span>🌍</span>
-            <span>Acces la <strong>transport internațional</strong></span>
-          </div>
-          <div class="categorie-detail-item">
-            <span>💰</span>
-            <span>Salarii de până la <strong>3.000€+/lună</strong></span>
-          </div>
-        </div>
-        <div class="price-tag">
-          <div class="price">De la 2.800 Lei</div>
-          <div class="price-label">*Cel mai bine plătit</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<h2 class="section-title">Categorii de Permise</h2>
+<p class="section-subtitle">Oferim cursuri pentru toate categoriile de permis auto</p>
+
+<div class="categorii-grid">
+<div class="categorie-card">
+<span class="popular-badge">CEL MAI POPULAR</span>
+<div class="categorie-icon">🚗</div>
+<h3>Categoria B</h3>
+<p>Permis standard pentru autoturisme și vehicule ușoare cu masa totală maximă autorizată de până la 3.5 tone</p>
+<div class="categorie-details">
+<div class="categorie-detail-item">
+<span>📚</span>
+<span><strong>30 ore</strong> curs legislație rutieră</span>
+</div>
+<div class="categorie-detail-item">
+<span>🚗</span>
+<span><strong>30 ore</strong> instrucție practică</span>
+</div>
+<div class="categorie-detail-item">
+<span>📅</span>
+<span>Durată medie: <strong>2-3 luni</strong></span>
+</div>
+<div class="categorie-detail-item">
+<span>🎯</span>
+<span>Vârstă minimă: <strong>18 ani</strong></span>
+</div>
+</div>
+<div class="price-tag">
+<div class="price">De la 2.500 Lei</div>
+<div class="price-label">*Prețul include toate materialele</div>
+</div>
+<div style="margin-top: 15px;">
+<a href="#contact" class="btn btn-primary" style="width: 100%; padding: 12px;">Înscrie-te Acum</a>
+</div>
+</div>
+
+<div class="categorie-card">
+<span class="popular-badge">🔥 PENTRU TINERI</span>
+<div class="categorie-icon">🛵</div>
+<h3>Categoria B1</h3>
+<p>Permis pentru conducerea cvadriciclurilor ușoare și ATV-uri, ideal pentru tinerii de 16 ani</p>
+<div class="categorie-details">
+<div class="categorie-detail-item">
+<span>📚</span>
+<span><strong>20 ore</strong> teorie</span>
+</div>
+<div class="categorie-detail-item">
+<span>🛵</span>
+<span><strong>15 ore</strong> practică</span>
+</div>
+<div class="categorie-detail-item">
+<span>📅</span>
+<span>Durată: <strong>1-2 luni</strong></span>
+</div>
+<div class="categorie-detail-item">
+<span>🎯</span>
+<span>Vârstă minimă: <strong>16 ani</strong></span>
+</div>
+</div>
+<div class="price-tag">
+<div class="price">De la 1.800 Lei</div>
+<div class="price-label">*Cel mai bun prim permis</div>
+</div>
+<div style="margin-top: 15px;">
+<a href="#contact" class="btn btn-primary" style="width: 100%; padding: 12px;">Înscrie-te Acum</a>
+</div>
+</div>
+
+<div class="categorie-card">
+<div class="categorie-icon">🚙</div>
+<h3>Categoria BE</h3>
+<p>Extindere pentru autoturisme cu remorcă sau rulotă peste 750 kg, perfect pentru călătorii</p>
+<div class="categorie-details">
+<div class="categorie-detail-item">
+<span>📚</span>
+<span><strong>10 ore</strong> teorie specifică</span>
+</div>
+<div class="categorie-detail-item">
+<span>🚙</span>
+<span><strong>15 ore</strong> practică cu remorcă</span>
+</div>
+<div class="categorie-detail-item">
+<span>📅</span>
+<span>Durată: <strong>1-2 luni</strong></span>
+</div>
+<div class="categorie-detail-item">
+<span>⚠️</span>
+<span>Necesar: <strong>Permis Categoria B</strong></span>
+</div>
+</div>
+<div class="price-tag">
+<div class="price">De la 1.500 Lei</div>
+<div class="price-label">*Necesită categoria B</div>
+</div>
+<div style="margin-top: 15px;">
+<a href="#contact" class="btn btn-primary" style="width: 100%; padding: 12px;">Înscrie-te Acum</a>
+</div>
+</div>
+
+<div class="categorie-card">
+<div class="categorie-icon">🚚</div>
+<h3>Categoria C</h3>
+<p>Permis profesional pentru camioane și vehicule grele peste 3.5 tone, deschide oportunități de carieră</p>
+<div class="categorie-details">
+<div class="categorie-detail-item">
+<span>📚</span>
+<span><strong>28 ore</strong> teorie avansată</span>
+</div>
+<div class="categorie-detail-item">
+<span>🚚</span>
+<span><strong>30 ore</strong> practică specializată</span>
+</div>
+<div class="categorie-detail-item">
+<span>📅</span>
+<span>Durată: <strong>2-3 luni</strong></span>
+</div>
+<div class="categorie-detail-item">
+<span>🎯</span>
+<span>Vârstă minimă: <strong>21 ani</strong></span>
+</div>
+</div>
+<div class="price-tag">
+<div class="price">De la 3.200 Lei</div>
+<div class="price-label">*Investiție în carieră</div>
+</div>
+<div style="margin-top: 15px;">
+<a href="#contact" class="btn btn-primary" style="width: 100%; padding: 12px;">Înscrie-te Acum</a>
+</div>
+</div>
+
+<div class="categorie-card">
+<div class="categorie-icon">🚛</div>
+<h3>Categoria CE</h3>
+<p>Permis premium pentru TIR-uri și transport internațional, cel mai solicitat în industrie</p>
+<div class="categorie-details">
+<div class="categorie-detail-item">
+<span>📚</span>
+<span><strong>20 ore</strong> legislație internațională</span>
+</div>
+<div class="categorie-detail-item">
+<span>🚛</span>
+<span><strong>25 ore</strong> instrucție TIR</span>
+</div>
+<div class="categorie-detail-item">
+<span>📅</span>
+<span>Durată: <strong>2-3 luni</strong></span>
+</div>
+<div class="categorie-detail-item">
+<span>⚠️</span>
+<span>Necesar: <strong>Permis Categoria C</strong></span>
+</div>
+</div>
+<div class="price-tag">
+<div class="price">De la 2.800 Lei</div>
+<div class="price-label">*Cel mai bine plătit</div>
+</div>
+<div style="margin-top: 15px;">
+<a href="#contact" class="btn btn-primary" style="width: 100%; padding: 12px;">Înscrie-te Acum</a>
+</div>
+</div>
+</div>
+</div>
 </section>
 
 <!-- Instructori Section -->
 <section id="instructori" class="section instructori-section">
-  <div class="container">
-    <h2 class="section-title">Instructorii Noștri</h2>
-    <p class="section-subtitle">Echipa de profesioniști cu experiență vastă</p>
-    
-    <div class="instructori-grid">
-      <div class="instructor-card">
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Bivol Sergiu" class="instructor-image" onerror="this.src='https://ui-avatars.com/api/?name=Bivol+Sergiu&size=400&background=dc2626&color=fff&font-size=0.4&bold=true'" />
-        <div class="instructor-info">
-          <h3 class="instructor-name">Bivol Sergiu</h3>
-          <p class="instructor-categories">B, B1, BE, C, CE</p>
-          <div class="instructor-rating">⭐⭐⭐⭐⭐ (5.0)</div>
-          <p class="instructor-students">✅ 350+ elevi instruiți cu succes</p>
-          <p class="instructor-experience">20+ ani experiență în instruire<br/>Instructor principal<br/>Specialist trasee dificile</p>
-        </div>
-      </div>
-      
-      <div class="instructor-card">
-        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop" alt="Florin Bejinariu" class="instructor-image" onerror="this.src='https://ui-avatars.com/api/?name=Florin+Bejinariu&size=400&background=dc2626&color=fff&font-size=0.4&bold=true'" />
-        <div class="instructor-info">
-          <h3 class="instructor-name">Florin Bejinariu</h3>
-          <p class="instructor-categories">B, BE</p>
-          <div class="instructor-rating">⭐⭐⭐⭐⭐ (4.9)</div>
-          <p class="instructor-students">✅ 280+ elevi instruiți cu succes</p>
-          <p class="instructor-experience">15 ani experiență<br/>Specialist categoria B<br/>Expert parcare și manevră</p>
-        </div>
-      </div>
-      
-      <div class="instructor-card">
-        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop" alt="Florin Tofan" class="instructor-image" onerror="this.src='https://ui-avatars.com/api/?name=Florin+Tofan&size=400&background=dc2626&color=fff&font-size=0.4&bold=true'" />
-        <div class="instructor-info">
-          <h3 class="instructor-name">Florin Tofan</h3>
-          <p class="instructor-categories">B, BE</p>
-          <div class="instructor-rating">⭐⭐⭐⭐⭐ (4.8)</div>
-          <p class="instructor-students">✅ 220+ elevi instruiți cu succes</p>
-          <p class="instructor-experience">12 ani experiență<br/>Expert trasee urbane<br/>Specialist conducere defensivă</p>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<h2 class="section-title">Instructorii Noștri Profesioniști</h2>
+<p class="section-subtitle">Echipa de experți cu peste 20 de ani experiență</p>
+
+<div class="instructori-grid">
+<div class="instructor-card">
+<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Bivol Sergiu" class="instructor-image" onerror="this.src='https://ui-avatars.com/api/?name=Bivol+Sergiu&size=400&background=dc2626&color=fff&font-size=0.4&bold=true'" />
+<div class="instructor-info">
+<h3 class="instructor-name">Bivol Sergiu</h3>
+<p class="instructor-categories">B, B1, BE, C, CE</p>
+<div class="instructor-rating">⭐⭐⭐⭐⭐ (5.0)</div>
+<p class="instructor-students">✅ 350+ elevi instruiți cu succes</p>
+<p class="instructor-experience">20+ ani experiență în instruire<br/>Instructor principal<br/>Specialist trasee dificile</p>
+</div>
+</div>
+
+<div class="instructor-card">
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop" alt="Florin Bejinariu" class="instructor-image" onerror="this.src='https://ui-avatars.com/api/?name=Florin+Bejinariu&size=400&background=dc2626&color=fff&font-size=0.4&bold=true'" />
+<div class="instructor-info">
+<h3 class="instructor-name">Florin Bejinariu</h3>
+<p class="instructor-categories">B, BE</p>
+<div class="instructor-rating">⭐⭐⭐⭐⭐ (4.9)</div>
+<p class="instructor-students">✅ 280+ elevi instruiți cu succes</p>
+<p class="instructor-experience">15 ani experiență<br/>Specialist categoria B<br/>Expert parcare și manevră</p>
+</div>
+</div>
+
+<div class="instructor-card">
+<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop" alt="Florin Tofan" class="instructor-image" onerror="this.src='https://ui-avatars.com/api/?name=Florin+Tofan&size=400&background=dc2626&color=fff&font-size=0.4&bold=true'" />
+<div class="instructor-info">
+<h3 class="instructor-name">Florin Tofan</h3>
+<p class="instructor-categories">B, BE</p>
+<div class="instructor-rating">⭐⭐⭐⭐⭐ (4.8)</div>
+<p class="instructor-students">✅ 220+ elevi instruiți cu succes</p>
+<p class="instructor-experience">12 ani experiență<br/>Expert trasee urbane<br/>Specialist conducere defensivă</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 
-<!-- Galerie Section - DOAR 3 POZE INITIAL -->
+<!-- Testimonials Section - PUTERNIC! -->
+<section id="testimoniale" class="section testimonials-section">
+<div class="container">
+<h2 class="section-title">⭐ Ce Spun Absolvenții Noștri</h2>
+<p class="section-subtitle">Peste 500 de recenzii pozitive de la cursanți mulțumiți</p>
+
+<div class="testimonials-grid">
+<div class="testimonial-card">
+<div class="testimonial-header">
+<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Maria Popescu" class="testimonial-avatar" onerror="this.src='https://ui-avatars.com/api/?name=Maria+Popescu&size=100&background=dc2626&color=fff&font-size=0.4&bold=true'" />
+<div class="testimonial-author-info">
+<h4>Maria Popescu</h4>
+<p class="testimonial-category">Categoria B</p>
+</div>
+</div>
+<div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+<p class="testimonial-text">"Cea mai bună decizie! Am reușit să iau permisul din prima încercare. Instructorul Sergiu a fost extrem de profesionist și răbdător. Mașinile sunt noi și foarte bine întreținute. Recomand cu încredere!"</p>
+<p class="testimonial-date">Promovat acum 2 săptămâni</p>
+</div>
+
+<div class="testimonial-card">
+<div class="testimonial-header">
+<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Ion Mureșan" class="testimonial-avatar" onerror="this.src='https://ui-avatars.com/api/?name=Ion+Muresan&size=100&background=dc2626&color=fff&font-size=0.4&bold=true'" />
+<div class="testimonial-author-info">
+<h4>Ion Mureșan</h4>
+<p class="testimonial-category">Categoria CE</p>
+</div>
+</div>
+<div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+<p class="testimonial-text">"Am obținut categoria CE pentru a lucra ca șofer internațional. Pregătirea a fost excelentă! Acum câștig 3.000€ pe lună. Mulțumesc START DRIVE pentru că mi-ați schimbat viața!"</p>
+<p class="testimonial-date">Promovat acum 1 lună</p>
+</div>
+
+<div class="testimonial-card">
+<div class="testimonial-header">
+<img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" alt="Ana Radu" class="testimonial-avatar" onerror="this.src='https://ui-avatars.com/api/?name=Ana+Radu&size=100&background=dc2626&color=fff&font-size=0.4&bold=true'" />
+<div class="testimonial-author-info">
+<h4>Ana Radu</h4>
+<p class="testimonial-category">Categoria B</p>
+</div>
+</div>
+<div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+<p class="testimonial-text">"Program flexibil, instructori prietenoși și metode moderne de predare. Am avut emoții la început, dar echipa m-a susținut constant. Promovat din prima încercare cu 27 de puncte din 29!"</p>
+<p class="testimonial-date">Promovat acum 3 săptămâni</p>
+</div>
+
+<div class="testimonial-card">
+<div class="testimonial-header">
+<img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Andrei Popa" class="testimonial-avatar" onerror="this.src='https://ui-avatars.com/api/?name=Andrei+Popa&size=100&background=dc2626&color=fff&font-size=0.4&bold=true'" />
+<div class="testimonial-author-info">
+<h4>Andrei Popa</h4>
+<p class="testimonial-category">Categoria C</p>
+</div>
+</div>
+<div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+<p class="testimonial-text">"Pregătire de top pentru categoria C! Acum lucrez la o firmă de transport și câștig foarte bine. Instructorul Sergiu m-a învățat tot ce trebuie să știu despre condusul defensiv și siguranța în trafic."</p>
+<p class="testimonial-date">Promovat acum 1 lună</p>
+</div>
+
+<div class="testimonial-card">
+<div class="testimonial-header">
+<img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop" alt="Cristina Vasile" class="testimonial-avatar" onerror="this.src='https://ui-avatars.com/api/?name=Cristina+Vasile&size=100&background=dc2626&color=fff&font-size=0.4&bold=true'" />
+<div class="testimonial-author-info">
+<h4>Cristina Vasile</h4>
+<p class="testimonial-category">Categoria B</p>
+</div>
+</div>
+<div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+<p class="testimonial-text">"La 45 de ani am decis să iau permisul. Credeam că e prea târziu, dar instructorul Florin m-a încurajat constant. Acum duc copiii la școală cu mașina mea! Vă mulțumesc din suflet!"</p>
+<p class="testimonial-date">Promovat acum 2 luni</p>
+</div>
+
+<div class="testimonial-card">
+<div class="testimonial-header">
+<img src="https://images.unsplash.com/photo-1463453091185-61582044d556?w=100&h=100&fit=crop" alt="Vlad Ionescu" class="testimonial-avatar" onerror="this.src='https://ui-avatars.com/api/?name=Vlad+Ionescu&size=100&background=dc2626&color=fff&font-size=0.4&bold=true'" />
+<div class="testimonial-author-info">
+<h4>Vlad Ionescu</h4>
+<p class="testimonial-category">Categoria B1</p>
+</div>
+</div>
+<div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+<p class="testimonial-text">"La 16 ani am luat categoria B1. Acum mă pot deplasa cu ATV-ul oriunde! Instructorul a fost super și mi-a explicat totul foarte clar. Recomand tuturor tinerilor!"</p>
+<p class="testimonial-date">Promovat acum 3 săptămâni</p>
+</div>
+</div>
+
+<div style="text-align: center; margin-top: 50px;">
+<a href="#contact" class="btn btn-primary" style="font-size: 18px; padding: 18px 50px;">🚗 Vreau Și Eu Să Promovez Din Prima!</a>
+</div>
+</div>
+</section>
+
+<!-- CTA Section - CONVERSIE! -->
+<section class="cta-section">
+<div class="cta-content">
+<h2>🔥 Ofertă Limitată: -15% Reducere!</h2>
+<p>Înscrie-te până pe 30 Noiembrie și beneficiezi de 15% reducere + BONUS: 5 ore gratuite de condus!</p>
+<div class="cta-buttons">
+<a href="#contact" class="btn btn-primary" style="font-size: 18px; padding: 18px 50px; background: white; color: #dc2626;">🚗 Vreau Reducerea Acum!</a>
+<a href="tel:0744420905" class="btn btn-secondary" style="font-size: 18px; padding: 18px 50px;">📞 Sună: 0744 420 905</a>
+</div>
+<div class="cta-features">
+<div class="cta-feature">
+<span class="cta-feature-icon">✓</span>
+<span class="cta-feature-text">Fără Costuri Ascunse</span>
+</div>
+<div class="cta-feature">
+<span class="cta-feature-icon">✓</span>
+<span class="cta-feature-text">Garanție de Calitate</span>
+</div>
+<div class="cta-feature">
+<span class="cta-feature-icon">✓</span>
+<span class="cta-feature-text">Mașini Noi 2024</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Galerie Section -->
 <section id="galerie" class="section">
-  <div class="container">
-    <h2 class="section-title">Galeria Noastră</h2>
-    <p class="section-subtitle">Descoperă facilităților și vehiculele noastre moderne</p>
-    
-    <div class="galerie-grid preview" id="galerieGrid">
-      <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&h=600&fit=crop" alt="Galerie 1" class="galerie-image" />
-      <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800&h=600&fit=crop" alt="Galerie 2" class="galerie-image" />
-      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop" alt="Galerie 3" class="galerie-image" />
-      <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800&h=600&fit=crop" alt="Galerie 4" class="galerie-image hidden" />
-      <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&h=600&fit=crop" alt="Galerie 5" class="galerie-image hidden" />
-      <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&h=600&fit=crop" alt="Galerie 6" class="galerie-image hidden" />
-    </div>
-    
-    <button class="view-more-btn" id="viewMoreBtn">📷 Vezi Mai Multe Poze</button>
-  </div>
+<div class="container">
+<h2 class="section-title">Galeria Noastră</h2>
+<p class="section-subtitle">Descoperă facilitățile și vehiculele noastre moderne</p>
+
+<div class="galerie-grid preview" id="galerieGrid">
+<img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&h=600&fit=crop" alt="Galerie 1" class="galerie-image" />
+<img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800&h=600&fit=crop" alt="Galerie 2" class="galerie-image" />
+<img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop" alt="Galerie 3" class="galerie-image" />
+<img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800&h=600&fit=crop" alt="Galerie 4" class="galerie-image hidden" />
+<img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&h=600&fit=crop" alt="Galerie 5" class="galerie-image hidden" />
+<img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&h=600&fit=crop" alt="Galerie 6" class="galerie-image hidden" />
+</div>
+
+<button class="view-more-btn" id="viewMoreBtn">📷 Vezi Mai Multe Poze</button>
+</div>
 </section>
 
 <!-- Locatie Section -->
 <section id="locatie" class="section locatie-section">
-  <div class="container">
-    <h2 class="section-title">Locația Noastră</h2>
-    <p class="section-subtitle">Ne găsești ușor în centrul Sucevei</p>
-    
-    <div class="locatie-content">
-      <div class="locatie-info">
-        <h3>📍 Unde Ne Găsești</h3>
-        <p><strong>Adresă:</strong><br/>Strada Mărăști, nr. 12<br/>În parcarea la MPO<br/>Suceava, România</p>
-        <p><strong>Program:</strong><br/>Luni - Vineri: 9:00 - 18:00<br/>Sâmbătă: 9:00 - 14:00</p>
-        <p><strong>Contact:</strong><br/>Telefon: <a href="tel:0744420905">0744 420 905</a></p>
-      </div>
-      
-      <div class="map-container">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2713.0444879287574!2d26.250630276758648!3d47.65140997119557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4734573f27b844e7%3A0x9a7dbae158e0f334!2sStrada%20Mare%C8%99al%20Alexandru%20Averescu%2012%2C%20Suceava!5e0!3m2!1sen!2sro!4v1700000000000!5m2!1sen!2sro"
-          allowfullscreen="" 
-          loading="lazy">
-        </iframe>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="container">
+<h2 class="section-title">📍 Ne Găsești Ușor în Centrul Sucevei</h2>
+<p class="section-subtitle">Vino să ne cunoști personal!</p>
 
-<!-- Reviews Section -->
-<section id="reviews" class="section">
-  <div class="container">
-    <h2 class="section-title">Ce Spun Absolvenții Noștri</h2>
-    <p class="section-subtitle">Păreri reale de la cursanți mulțumiți</p>
-    
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-        <p class="review-text">"Instructori foarte profesioniști! Am luat permisul din prima încercare datorită pregătirii excelente pe care am primit-o. Recomand cu încredere!"</p>
-        <p class="review-author">— Maria Popescu</p>
-      </div>
-      
-      <div class="review-card">
-        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-        <p class="review-text">"Cea mai bună școală de șoferi din Suceava! Mașini moderne, instructori răbdători și metode de predare eficiente. Mulțumesc echipei!"</p>
-        <p class="review-author">— Ion Mureșan</p>
-      </div>
-      
-      <div class="review-card">
-        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-        <p class="review-text">"Instrucțiuni clare, program flexibil și rezultate rapide. Am obținut permisul categoria C fără probleme. Recomand tuturor!"</p>
-        <p class="review-author">— Ana Radu</p>
-      </div>
-    </div>
-  </div>
+<div class="locatie-content">
+<div class="locatie-info">
+<h3>📍 Unde Ne Găsești</h3>
+<p><strong>Adresă:</strong><br/>Strada Mărăști, nr. 12<br/>În parcarea la MPO<br/>Suceava, România</p>
+<p><strong>Program:</strong><br/>Luni - Vineri: 9:00 - 18:00<br/>Sâmbătă: 9:00 - 14:00</p>
+<p><strong>Contact:</strong><br/>Telefon: <a href="tel:0744420905">0744 420 905</a></p>
+<div style="margin-top: 25px;">
+<a href="#contact" class="btn btn-primary">Programează o Vizită</a>
+</div>
+</div>
+
+<div class="map-container">
+<iframe 
+src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d2460.4367306876525!2d26.248669375927825!3d47.646909985193716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e6!4m4!1s0x4734fd0045c8ebef%3A0x7eb8ab5f4cffcaad!3m2!1d47.6469063!2d26.2512416!4m5!1s0x4734fd0045c8ebef%3A0x7eb8ab5f4cffcaad!2sSTART%20DRIVE%20BVL%20(Scoala%20de%20Soferi)%2C%20Strada%20M%C4%83r%C4%83%C8%99ti%2012%2C%20Suceava%20720182!3m2!1d47.6469063!2d26.2512416!5e1!3m2!1sen!2sro!4v1763806131549!5m2!1sen!2sro"
+width="600" 
+height="450" 
+style="border:0;" 
+allowfullscreen="" 
+loading="lazy" 
+referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+</div>
+</div>
+</div>
 </section>
 
 <!-- Blog Section -->
 <section id="blog" class="section blog-section">
-  <div class="container">
-    <h2 class="section-title">Ultimele Articole</h2>
-    <p class="section-subtitle">Sfaturi și informații utile pentru viitorii șoferi</p>
-    
-    <div class="blog-grid">
-      <div class="blog-card" data-blog="1">
-        <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&h=400&fit=crop" alt="Blog 1" class="blog-image" />
-        <div class="blog-content">
-          <div class="blog-date">15 Noiembrie 2024</div>
-          <h3 class="blog-title">Cum să te pregătești pentru examenul auto</h3>
-          <p class="blog-excerpt">Descoperă cele mai eficiente metode de pregătire pentru a obține permisul auto din prima încercare.</p>
-          <span class="blog-link">Citește mai mult →</span>
-        </div>
-      </div>
-      
-      <div class="blog-card" data-blog="2">
-        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800&h=400&fit=crop" alt="Blog 2" class="blog-image" />
-        <div class="blog-content">
-          <div class="blog-date">10 Noiembrie 2024</div>
-          <h3 class="blog-title">Top 10 greșeli ale șoferilor începători</h3>
-          <p class="blog-excerpt">Evită aceste greșeli comune pentru a deveni un șofer sigur și responsabil pe drumurile publice.</p>
-          <span class="blog-link">Citește mai mult →</span>
-        </div>
-      </div>
-      
-      <div class="blog-card" data-blog="3">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop" alt="Blog 3" class="blog-image" />
-        <div class="blog-content">
-          <div class="blog-date">5 Noiembrie 2024</div>
-          <h3 class="blog-title">Importanța orelor de condus practice</h3>
-          <p class="blog-excerpt">Află de ce experiența practică este esențială pentru formarea unui șofer competent și sigur.</p>
-          <span class="blog-link">Citește mai mult →</span>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<h2 class="section-title">📰 Sfaturi & Articole Utile</h2>
+<p class="section-subtitle">Informații valoroase pentru viitorii șoferi</p>
+
+<div class="blog-grid">
+<div class="blog-card" data-blog="1">
+<img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&h=400&fit=crop" alt="Blog 1" class="blog-image" />
+<div class="blog-content">
+<div class="blog-date">15 Noiembrie 2024</div>
+<h3 class="blog-title">Cum să te pregătești pentru examenul auto</h3>
+<p class="blog-excerpt">Descoperă cele mai eficiente metode de pregătire pentru a obține permisul auto din prima încercare.</p>
+<span class="blog-link">Citește mai mult →</span>
+</div>
+</div>
+
+<div class="blog-card" data-blog="2">
+<img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800&h=400&fit=crop" alt="Blog 2" class="blog-image" />
+<div class="blog-content">
+<div class="blog-date">10 Noiembrie 2024</div>
+<h3 class="blog-title">Top 10 greșeli ale șoferilor începători</h3>
+<p class="blog-excerpt">Evită aceste greșeli comune pentru a deveni un șofer sigur și responsabil pe drumurile publice.</p>
+<span class="blog-link">Citește mai mult →</span>
+</div>
+</div>
+
+<div class="blog-card" data-blog="3">
+<img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop" alt="Blog 3" class="blog-image" />
+<div class="blog-content">
+<div class="blog-date">5 Noiembrie 2024</div>
+<h3 class="blog-title">Importanța orelor de condus practice</h3>
+<p class="blog-excerpt">Află de ce experiența practică este esențială pentru formarea unui șofer competent și sigur.</p>
+<span class="blog-link">Citește mai mult →</span>
+</div>
+</div>
+</div>
+</div>
 </section>
 
 <!-- FAQ Section -->
 <section id="faq" class="section faq-section">
-  <div class="container">
-    <h2 class="section-title">Întrebări Frecvente</h2>
-    <p class="section-subtitle">Răspunsuri la cele mai comune întrebări</p>
-    
-    <div class="faq-container">
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Cât durează cursul pentru categoria B?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          <div class="faq-answer-content">
-            Cursul pentru categoria B durează în medie 2-3 luni, în funcție de disponibilitatea cursantului și ritmul de învățare. Include 30 de ore de teorie și minim 30 de ore de practică.
-          </div>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Ce documente sunt necesare pentru înscriere?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          <div class="faq-answer-content">
-            Pentru înscriere ai nevoie de: carte de identitate, certificat medical (obținut de la medicul de familie), 4 fotografii tip buletin, și dovada plății taxei de înscriere.
-          </div>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Care este vârsta minimă pentru a obține permisul?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          <div class="faq-answer-content">
-            Vârsta minimă este de 18 ani pentru categoria B, 16 ani pentru categoria B1, și 21 ani pentru categoriile C și CE. Poți începe cursurile cu 6 luni înainte de împlinirea vârstei.
-          </div>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Cât costă cursul complet?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          <div class="faq-answer-content">
-            Prețul depinde de categoria de permis dorită. Pentru categoria B, prețul pornește de la 2.500 lei și include toate orele obligatorii de teorie și practică. Contactează-ne pentru o ofertă personalizată.
-          </div>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Pot face ore suplimentare de condus?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          <div class="faq-answer-content">
-            Da, poți face oricâte ore suplimentare dorești pentru a te simți mai pregătit. Multe dintre cursanții noștri aleg să facă 5-10 ore în plus pentru mai multă siguranță la examen.
-          </div>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Ce se întâmplă dacă nu promovez examenul?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          <div class="faq-answer-content">
-            Poți resustine examenul după 14 zile. Îți oferim suport complet și lecții suplimentare pentru a identifica și corecta eventualele probleme înainte de următoarea încercare.
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<h2 class="section-title">❓ Întrebări Frecvente</h2>
+<p class="section-subtitle">Răspunsuri la cele mai comune întrebări</p>
+
+<div class="faq-container">
+<div class="faq-item">
+<div class="faq-question">
+<span>Cât durează cursul pentru categoria B?</span>
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+<div class="faq-answer-content">
+Cursul pentru categoria B durează în medie 2-3 luni, în funcție de disponibilitatea cursantului și ritmul de învățare. Include 30 de ore de teorie și minim 30 de ore de practică.
+</div>
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">
+<span>Ce documente sunt necesare pentru înscriere?</span>
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+<div class="faq-answer-content">
+Pentru înscriere ai nevoie de: carte de identitate, certificat medical (obținut de la medicul de familie), 4 fotografii tip buletin, și dovada plății taxei de înscriere.
+</div>
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">
+<span>Care este vârsta minimă pentru a obține permisul?</span>
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+<div class="faq-answer-content">
+Vârsta minimă este de 18 ani pentru categoria B, 16 ani pentru categoria B1, și 21 ani pentru categoriile C și CE. Poți începe cursurile cu 6 luni înainte de împlinirea vârstei.
+</div>
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">
+<span>Cât costă cursul complet?</span>
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+<div class="faq-answer-content">
+Prețul depinde de categoria de permis dorită. Pentru categoria B, prețul pornește de la 2.500 lei și include toate orele obligatorii de teorie și practică. Contactează-ne pentru o ofertă personalizată.
+</div>
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">
+<span>Pot face ore suplimentare de condus?</span>
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+<div class="faq-answer-content">
+Da, poți face oricâte ore suplimentare dorești pentru a te simți mai pregătit. Multe dintre cursanții noștri aleg să facă 5-10 ore în plus pentru mai multă siguranță la examen.
+</div>
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">
+<span>Ce se întâmplă dacă nu promovez examenul?</span>
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+<div class="faq-answer-content">
+Poți resustine examenul după 14 zile. Îți oferim suport complet și lecții suplimentare pentru a identifica și corecta eventualele probleme înainte de următoarea încercare.
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 
 <!-- Contact Section -->
 <section id="contact" class="section contact-section">
-  <div class="container">
-    <h2 class="section-title" style="color: white;">Contactează-ne</h2>
-    <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">Suntem aici să răspundem la toate întrebările tale</p>
-    
-    <div class="contact-content">
-      <div class="contact-info">
-        <h3>Informații de Contact</h3>
-        
-        <div class="contact-item">
-          <div class="contact-icon">📞</div>
-          <div class="contact-details">
-            <h4>Telefon</h4>
-            <p><a href="tel:0744420905">0744 420 905</a></p>
-          </div>
-        </div>
-        
-        <div class="contact-item">
-          <div class="contact-icon">📍</div>
-          <div class="contact-details">
-            <h4>Adresă</h4>
-            <p>Strada Mărăști, nr. 12<br/>În parcarea la MPO, Suceava</p>
-          </div>
-        </div>
-        
-        <div class="contact-item">
-          <div class="contact-icon">🕐</div>
-          <div class="contact-details">
-            <h4>Program</h4>
-            <p>Luni - Vineri: 9:00 - 18:00<br/>Sâmbătă: 9:00 - 14:00</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="contact-form">
-        <h3>Trimite-ne un Mesaj</h3>
-        <form>
-          <div class="form-group">
-            <label for="name">Nume complet</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          
-          <div class="form-group">
-            <label for="phone">Telefon</label>
-            <input type="tel" id="phone" name="phone" required />
-          </div>
-          
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          
-          <div class="form-group">
-            <label for="category">Categorie permis dorită</label>
-            <select id="category" name="category" required>
-              <option value="">Selectează categoria</option>
-              <option value="B">Categoria B - Autoturisme (18 ani)</option>
-              <option value="B1">Categoria B1 - Cvadricicluri (16 ani)</option>
-              <option value="BE">Categoria BE - Auto cu remorcă</option>
-              <option value="C">Categoria C - Camioane (21 ani)</option>
-              <option value="CE">Categoria CE - TIR-uri</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <label for="message">Mesaj</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-          
-          <button type="submit" class="submit-btn">Trimite Mesaj</button>
-        </form>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<h2 class="section-title" style="color: white;">📞 Contactează-ne Acum!</h2>
+<p class="section-subtitle" style="color: rgba(255,255,255,0.7);">Suntem aici să răspundem la toate întrebările tale</p>
+
+<div class="contact-content">
+<div class="contact-info">
+<h3>Informații de Contact</h3>
+
+<div class="contact-item">
+<div class="contact-icon">📞</div>
+<div class="contact-details">
+<h4>Sună Acum</h4>
+<p><a href="tel:0744420905">0744 420 905</a></p>
+<p style="font-size: 12px; margin-top: 5px;">Luni - Sâmbătă: 9:00 - 18:00</p>
+</div>
+</div>
+
+<div class="contact-item">
+<div class="contact-icon">📍</div>
+<div class="contact-details">
+<h4>Adresă</h4>
+<p>Strada Mărăști, nr. 12<br/>În parcarea la MPO, Suceava</p>
+</div>
+</div>
+
+<div class="contact-item">
+<div class="contact-icon">🕐</div>
+<div class="contact-details">
+<h4>Program</h4>
+<p>Luni - Vineri: 9:00 - 18:00<br/>Sâmbătă: 9:00 - 14:00</p>
+</div>
+</div>
+
+<div style="margin-top: 30px; padding: 20px; background: rgba(220, 38, 38, 0.1); border-radius: 10px; border: 2px solid #dc2626;">
+<h4 style="color: #dc2626; margin-bottom: 10px;">🔥 Ofertă Specială!</h4>
+<p style="color: white; font-size: 14px;">Înscrie-te până pe 30 Noiembrie și primești <strong style="color: #dc2626;">-15% REDUCERE</strong> + 5 ore gratuite de condus!</p>
+</div>
+</div>
+
+<div class="contact-form">
+<h3>Trimite-ne un Mesaj</h3>
+<form>
+<div class="form-group">
+<label for="name">Nume complet *</label>
+<input type="text" id="name" name="name" required placeholder="Ex: Ion Popescu" />
+</div>
+
+<div class="form-group">
+<label for="phone">Telefon *</label>
+<input type="tel" id="phone" name="phone" required placeholder="Ex: 0744 420 905" />
+</div>
+
+<div class="form-group">
+<label for="email">Email</label>
+<input type="email" id="email" name="email" placeholder="Ex: ion@email.com" />
+</div>
+
+<div class="form-group">
+<label for="category">Categorie permis dorită *</label>
+<select id="category" name="category" required>
+  <option value="">Selectează categoria</option>
+  <option value="B">Categoria B - Autoturisme (18 ani)</option>
+  <option value="B1">Categoria B1 - Cvadricicluri (16 ani)</option>
+  <option value="BE">Categoria BE - Auto cu remorcă</option>
+  <option value="C">Categoria C - Camioane (21 ani)</option>
+  <option value="CE">Categoria CE - TIR-uri</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="message">Mesaj</label>
+<textarea id="message" name="message" placeholder="Întrebări sau informații suplimentare..."></textarea>
+</div>
+
+<button type="submit" class="submit-btn">🚗 Trimite Cererea de Înscriere</button>
+<p style="font-size: 12px; color: #aaa; margin-top: 12px; text-align: center;">
+Te vom contacta în maxim 24 de ore!
+</p>
+</form>
+</div>
+</div>
+</div>
 </section>
 
 <!-- Footer -->
 <footer class="footer">
-  <div class="footer-content">
-    <div class="footer-section">
-      <h3>START DRIVE BVL</h3>
-      <p>Școala de șoferi de încredere din Suceava. Oferim cursuri profesionale pentru toate categoriile de permis auto cu instructori experimentați și mașini moderne.</p>
-      <div class="social-links">
-        <a href="#" class="social-link">📘</a>
-        <a href="#" class="social-link">📷</a>
-        <a href="#" class="social-link">🐦</a>
-      </div>
-    </div>
-    
-    <div class="footer-section">
-      <h3>Linkuri Rapide</h3>
-      <ul>
-        <li><a href="#home">Acasă</a></li>
-        <li><a href="#categorii">Categorii Permise</a></li>
-        <li><a href="#instructori">Instructori</a></li>
-        <li><a href="#galerie">Galerie</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#faq">Întrebări Frecvente</a></li>
-      </ul>
-    </div>
-    
-    <div class="footer-section">
-      <h3>Informații Legale</h3>
-      <ul>
-        <li><a href="#termeni">Termeni și Condiții</a></li>
-        <li><a href="#confidentialitate">Politica de Confidențialitate</a></li>
-        <li><a href="#gdpr">Protecția Datelor (GDPR)</a></li>
-        <li><a href="#cookies">Politica Cookies</a></li>
-        <li><a href="#regulament">Regulament Intern</a></li>
-      </ul>
-    </div>
-    
-    <div class="footer-section">
-      <h3>Contact</h3>
-      <ul>
-        <li>📞 <a href="tel:0744420905">0744 420 905</a></li>
-        <li>📧 <a href="mailto:contact@startdrivebvl.ro">contact@startdrivebvl.ro</a></li>
-        <li>📍 Str. Mărăști, nr. 12<br/>În parcarea la MPO, Suceava</li>
-        <li>🕐 Luni - Vineri: 9:00 - 18:00</li>
-        <li>🕐 Sâmbătă: 9:00 - 14:00</li>
-      </ul>
-    </div>
-  </div>
-  
-  <div class="footer-bottom">
-    <p>&copy; 2024 Start Drive BVL. Toate drepturile rezervate. | Autorizație RAR Nr. XXXX | CUI: XXXXXXXXX</p>
-    <p>Școala ta de șoferi de încredere din <a href="#home">Suceava</a> | Design & Development by C</p>
-  </div>
+<div class="footer-content">
+<div class="footer-section">
+<h3>START DRIVE BVL</h3>
+<p>Școala de șoferi de încredere din Suceava. Oferim cursuri profesionale pentru toate categoriile de permis auto cu instructori experimentați și mașini moderne.</p>
+<div class="social-links">
+<a href="#" class="social-link" title="Facebook">📘</a>
+<a href="#" class="social-link" title="Instagram">📷</a>
+<a href="#" class="social-link" title="TikTok">🎵</a>
+</div>
+</div>
+
+<div class="footer-section">
+<h3>Linkuri Rapide</h3>
+<ul>
+<li><a href="#home">Acasă</a></li>
+<li><a href="#categorii">Categorii Permise</a></li>
+<li><a href="#instructori">Instructori</a></li>
+<li><a href="#testimoniale">Testimoniale</a></li>
+<li><a href="#galerie">Galerie</a></li>
+<li><a href="#faq">Întrebări Frecvente</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h3>Informații Legale</h3>
+<ul>
+<li><a href="#termeni">Termeni și Condiții</a></li>
+<li><a href="#confidentialitate">Politica de Confidențialitate</a></li>
+<li><a href="#gdpr">Protecția Datelor (GDPR)</a></li>
+<li><a href="#cookies">Politica Cookies</a></li>
+<li><a href="#regulament">Regulament Intern</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h3>Contact</h3>
+<ul>
+<li>📞 <a href="tel:0744420905">0744 420 905</a></li>
+<li>📧 <a href="mailto:contact@startdrivebvl.ro">contact@startdrivebvl.ro</a></li>
+<li>📍 Str. Mărăști, nr. 12<br/>În parcarea la MPO, Suceava</li>
+<li>🕐 Luni - Vineri: 9:00 - 18:00</li>
+<li>🕐 Sâmbătă: 9:00 - 14:00</li>
+</ul>
+</div>
+</div>
+
+<div class="footer-bottom">
+<p>&copy; 2024 Start Drive BVL. Toate drepturile rezervate. | Autorizație RAR Nr. XXXX | CUI: XXXXXXXXX</p>
+<p>Școala ta de șoferi de încredere din <a href="#home">Suceava</a></p>
+</div>
 </footer>
 
 <!-- Blog Modal -->
 <div id="blogModal" class="modal">
-  <div class="modal-content">
-    <span class="modal-close">&times;</span>
-    <img id="modalImage" src="" alt="Blog" class="modal-image" />
-    <h2 id="modalTitle" class="modal-title"></h2>
-    <p id="modalDate" class="modal-date"></p>
-    <div id="modalText" class="modal-text"></div>
-  </div>
+<div class="modal-content">
+<span class="modal-close">&times;</span>
+<img id="modalImage" src="" alt="Blog" class="modal-image" />
+<h2 id="modalTitle" class="modal-title"></h2>
+<p id="modalDate" class="modal-date"></p>
+<div id="modalText" class="modal-text"></div>
+</div>
 </div>
 
 <script is:inline>
-  // Mobile Menu Toggle
-  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-  const navMenu = document.getElementById('navMenu');
-  
-  if (mobileMenuToggle && navMenu) {
-    mobileMenuToggle.addEventListener('click', () => {
-      mobileMenuToggle.classList.toggle('active');
-      navMenu.classList.toggle('active');
-    });
+// Mobile Menu Toggle
+const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+const navMenu = document.getElementById('navMenu');
 
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenuToggle.classList.remove('active');
-        navMenu.classList.remove('active');
-      });
-    });
-  }
+if (mobileMenuToggle && navMenu) {
+mobileMenuToggle.addEventListener('click', () => {
+mobileMenuToggle.classList.toggle('active');
+navMenu.classList.toggle('active');
+});
 
-  // Counter animation for stats
-  function animateCounter(element) {
-    const target = parseInt(element.getAttribute('data-target') || '0');
-    const duration = 2000;
-    const increment = target / (duration / 16);
-    let current = 0;
-    
-    const updateCounter = () => {
-      current += increment;
-      if (current < target) {
-        element.textContent = Math.floor(current).toString();
-        requestAnimationFrame(updateCounter);
-      } else {
-        element.textContent = target.toString();
-      }
-    };
-    
-    updateCounter();
-  }
-  
-  // Reset counters to 0
-  function resetCounters() {
-    document.querySelectorAll('.stat-number').forEach(counter => {
-      counter.textContent = '0';
-    });
-  }
-  
-  // Intersection Observer for stats
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const counters = entry.target.querySelectorAll('.stat-number');
-      if (entry.isIntersecting) {
-        counters.forEach(counter => {
-          animateCounter(counter);
-        });
-      } else {
-        resetCounters();
-      }
-    });
-  }, { threshold: 0.3 });
-  
-  const statsSection = document.querySelector('.stats-section');
-  if (statsSection) {
-    observer.observe(statsSection);
-  }
-  
-  // FAQ Accordion
-  document.querySelectorAll('.faq-question').forEach(question => {
-    question.addEventListener('click', () => {
-      const faqItem = question.parentElement;
-      const answer = faqItem.querySelector('.faq-answer');
-      
-      document.querySelectorAll('.faq-item').forEach(item => {
-        if (item !== faqItem) {
-          item.classList.remove('active');
-          const otherAnswer = item.querySelector('.faq-answer');
-          if (otherAnswer) {
-            otherAnswer.style.maxHeight = '0';
-          }
-        }
-      });
-      
-      faqItem.classList.toggle('active');
-      if (answer) {
-        if (faqItem.classList.contains('active')) {
-          answer.style.maxHeight = answer.scrollHeight + 'px';
-        } else {
-          answer.style.maxHeight = '0';
-        }
-      }
-    });
-  });
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-menu a').forEach(link => {
+link.addEventListener('click', () => {
+mobileMenuToggle.classList.remove('active');
+navMenu.classList.remove('active');
+});
+});
+}
 
-  // Galerie - Vezi Mai Multe
-  const viewMoreBtn = document.getElementById('viewMoreBtn');
-  const galerieGrid = document.getElementById('galerieGrid');
-  
-  if (viewMoreBtn && galerieGrid) {
-    viewMoreBtn.addEventListener('click', () => {
-      const hiddenImages = galerieGrid.querySelectorAll('.galerie-image.hidden');
-      hiddenImages.forEach(img => {
-        img.classList.remove('hidden');
-      });
-      galerieGrid.classList.remove('preview');
-      viewMoreBtn.classList.add('hidden');
-    });
-  }
+// Counter animation for stats
+function animateCounter(element) {
+const target = parseInt(element.getAttribute('data-target') || '0');
+const duration = 2000;
+const increment = target / (duration / 16);
+let current = 0;
 
-  // Blog Modal functionality
-  const blogPosts = {
-    '1': {
-      title: 'Cum să te pregătești pentru examenul auto',
-      date: '15 Noiembrie 2024',
-      image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&h=400&fit=crop',
-      content: `
-        <p>Obținerea permisului de conducere este un moment important în viața fiecărei persoane. Pentru a avea succes la examen, este esențial să te pregătești corespunzător, atât teoretic cât și practic.</p>
-        
-        <p><strong>1. Studiază legislația rutieră</strong><br/>
-        Dedică timp în fiecare zi pentru a studia regulile de circulație. Folosește materiale actualizate și aplicații mobile pentru a te testa constant.</p>
-        
-        <p><strong>2. Practică constant</strong><br/>
-        Nu te limita doar la orele obligatorii de condus. Cu cât conduci mai mult, cu atât te vei simți mai confortabil în trafic.</p>
-        
-        <p><strong>3. Simulează examenul</strong><br/>
-        Rezolvă cât mai multe teste online pentru a te obișnui cu tipul de întrebări care vor apărea la examen.</p>
-        
-        <p><strong>4. Odihnește-te înainte de examen</strong><br/>
-        O noapte de somn odihnitor înainte de examen este esențială pentru concentrare și performanță.</p>
-        
-        <p>Respectând acești pași, șansele tale de a promova din prima încercare cresc semnificativ!</p>
-      `
-    },
-    '2': {
-      title: 'Top 10 greșeli ale șoferilor începători',
-      date: '10 Noiembrie 2024',
-      image: 'https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800&h=400&fit=crop',
-      content: `
-        <p>Șoferii începători fac adesea aceleași greșeli. Iată cele mai comune și cum să le eviți:</p>
-        
-        <p><strong>1. Neglijarea oglinzilor retrovizoare</strong><br/>
-        Verifică constant oglinzile pentru a fi conștient de traficul din jurul tău.</p>
-        
-        <p><strong>2. Viteză inadecvată</strong><br/>
-        Respectă întotdeauna limitele de viteza și adaptează viteza la condițiile de drum.</p>
-        
-        <p><strong>3. Distanță insuficientă față de vehiculul din față</strong><br/>
-        Păstrează mereu o distanță de siguranță pentru a putea reacționa la timp.</p>
-        
-        <p><strong>4. Nefolosirea semnalizării</strong><br/>
-        Semnalizează întotdeauna intenția de a schimba direcția sau banda.</p>
-        
-        <p><strong>5. Distragerea atenției</strong><br/>
-        Nu folosi telefonul în timpul conducerii și evită alte distracții.</p>
-        
-        <p><strong>6. Panică în situații stresante</strong><br/>
-        Păstrează-ți calmul și gândește logic în orice situație.</p>
-        
-        <p><strong>7. Încredere excesivă</strong><br/>
-        Nu subestima pericolele din trafic, chiar dacă te simți confortabil la volan.</p>
-        
-        <p><strong>8. Neglijarea întreținerii mașinii</strong><br/>
-        Verifică regulat nivelul uleiului, presiunea anvelopelor și funcționarea luminilor.</p>
-        
-        <p><strong>9. Condus agresiv</strong><br/>
-        Respectă ceilalți participanți la trafic și evită comportamentul agresiv.</p>
-        
-        <p><strong>10. Ignorarea semnelor de oboseală</strong><br/>
-        Nu conduce când ești obosit. Fă pauze regulate în călătoriile lungi.</p>
-      `
-    },
-    '3': {
-      title: 'Importanța orelor de condus practice',
-      date: '5 Noiembrie 2024',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop',
-      content: `
-        <p>Orele de condus practice sunt fundamentul unei pregătiri complete pentru obținerea permisului de conducere și pentru a deveni un șofer sigur și responsabil.</p>
-        
-        <p><strong>De ce sunt importante orele practice?</strong></p>
-        
-        <p><strong>1. Dezvoltarea reflexelor</strong><br/>
-        Doar prin practică poți dezvolta reflexele necesare pentru a reacționa corect în diverse situații de trafic.</p>
-        
-        <p><strong>2. Înțelegerea comportamentului mașinii</strong><br/>
-        Fiecare vehicul se comportă diferit. Orele practice te ajută să înțelegi cum răspunde mașina la comenzile tale.</p>
-        
-        <p><strong>3. Experiență în trafic real</strong><br/>
-        Teoria este importantă, dar experiența în trafic real este de neînlocuit. Doar conducând în diverse condiții poți învăța să te adaptezi.</p>
-        
-        <p><strong>4. Încredere la volan</strong><br/>
-        Cu cât conduci mai mult, cu atât vei fi mai încrezător în abilitățile tale de conducere.</p>
-        
-        <p><strong>5. Pregătire pentru examen</strong><br/>
-        Orele practice te pregătesc exact pentru ceea ce vei întâlni la examenul practic.</p>
-        
-        <p><strong>Recomandări:</strong></p>
-        <ul>
-          <li>Nu te limita doar la orele obligatorii</li>
-          <li>Practică în diverse condiții meteorologice</li>
-          <li>Exersează parcările și manevreledificile</li>
-          <li>Condu pe trasee variate (oraș, drumuri naționale, autostradă)</li>
-        </ul>
-        
-        <p>La Start Drive BVL oferim ore suplimentare de practică pentru a te asigura că ești complet pregătit pentru examen și pentru conducerea independentă!</p>
-      `
-    }
-  };
+const updateCounter = () => {
+current += increment;
+if (current < target) {
+element.textContent = Math.floor(current).toString();
+requestAnimationFrame(updateCounter);
+} else {
+element.textContent = target.toString();
+}
+};
 
-  const modal = document.getElementById('blogModal');
-  const modalClose = document.querySelector('.modal-close');
-  
-  document.querySelectorAll('.blog-card').forEach(card => {
-    card.addEventListener('click', () => {
-      const blogId = card.getAttribute('data-blog');
-      if (blogId && blogPosts[blogId]) {
-        const post = blogPosts[blogId];
-        
-        const modalImage = document.getElementById('modalImage');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalDate = document.getElementById('modalDate');
-        const modalText = document.getElementById('modalText');
-        
-        if (modalImage) modalImage.src = post.image;
-        if (modalTitle) modalTitle.textContent = post.title;
-        if (modalDate) modalDate.textContent = post.date;
-        if (modalText) modalText.innerHTML = post.content;
-        
-        if (modal) modal.classList.add('show');
-      }
-    });
-  });
-  
-  if (modalClose) {
-    modalClose.addEventListener('click', () => {
-      if (modal) modal.classList.remove('show');
-    });
-  }
-  
-  window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      if (modal) modal.classList.remove('show');
-    }
-  });
+updateCounter();
+}
+
+// Reset counters to 0
+function resetCounters() {
+document.querySelectorAll('.stat-number').forEach(counter => {
+counter.textContent = '0';
+});
+}
+
+// Intersection Observer for stats
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+const counters = entry.target.querySelectorAll('.stat-number');
+if (entry.isIntersecting) {
+counters.forEach(counter => {
+animateCounter(counter);
+});
+} else {
+resetCounters();
+}
+});
+}, { threshold: 0.3 });
+
+const statsSection = document.querySelector('.stats-section');
+if (statsSection) {
+observer.observe(statsSection);
+}
+
+// FAQ Accordion
+document.querySelectorAll('.faq-question').forEach(question => {
+question.addEventListener('click', () => {
+const faqItem = question.parentElement;
+const answer = faqItem.querySelector('.faq-answer');
+
+document.querySelectorAll('.faq-item').forEach(item => {
+if (item !== faqItem) {
+item.classList.remove('active');
+const otherAnswer = item.querySelector('.faq-answer');
+if (otherAnswer) {
+otherAnswer.style.maxHeight = '0';
+}
+}
+});
+
+faqItem.classList.toggle('active');
+if (answer) {
+if (faqItem.classList.contains('active')) {
+answer.style.maxHeight = answer.scrollHeight + 'px';
+} else {
+answer.style.maxHeight = '0';
+}
+}
+});
+});
+
+// Galerie - Vezi Mai Multe
+const viewMoreBtn = document.getElementById('viewMoreBtn');
+const galerieGrid = document.getElementById('galerieGrid');
+
+if (viewMoreBtn && galerieGrid) {
+viewMoreBtn.addEventListener('click', () => {
+const hiddenImages = galerieGrid.querySelectorAll('.galerie-image.hidden');
+hiddenImages.forEach(img => {
+img.classList.remove('hidden');
+});
+galerieGrid.classList.remove('preview');
+viewMoreBtn.classList.add('hidden');
+});
+}
+
+// Blog Modal functionality
+const blogPosts = {
+'1': {
+title: 'Cum să te pregătești pentru examenul auto',
+date: '15 Noiembrie 2024',
+image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&h=400&fit=crop',
+content: `
+<p>Obținerea permisului de conducere este un moment important în viața fiecărei persoane. Pentru a avea succes la examen, este esențial să te pregătești corespunzător, atât teoretic cât și practic.</p>
+
+<p><strong>1. Studiază legislația rutieră</strong><br/>
+Dedică timp în fiecare zi pentru a studia regulile de circulație. Folosește materiale actualizate și aplicații mobile pentru a te testa constant.</p>
+
+<p><strong>2. Practică constant</strong><br/>
+Nu te limita doar la orele obligatorii de condus. Cu cât conduci mai mult, cu atât te vei simți mai confortabil în trafic.</p>
+
+<p><strong>3. Simulează examenul</strong><br/>
+Rezolvă cât mai multe teste online pentru a te obișnui cu tipul de întrebări care vor apărea la examen.</p>
+
+<p><strong>4. Odihnește-te înainte de examen</strong><br/>
+O noapte de somn odihnitor înainte de examen este esențială pentru concentrare și performanță.</p>
+
+<p>Respectând acești pași, șansele tale de a promova din prima încercare cresc semnificativ!</p>
+`
+},
+'2': {
+title: 'Top 10 greșeli ale șoferilor începători',
+date: '10 Noiembrie 2024',
+image: 'https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800&h=400&fit=crop',
+content: `
+<p>Șoferii începători fac adesea aceleași greșeli. Iată cele mai comune și cum să le eviți:</p>
+
+<p><strong>1. Neglijarea oglinzilor retrovizoare</strong><br/>
+Verifică constant oglinzile pentru a fi conștient de traficul din jurul tău.</p>
+
+<p><strong>2. Viteză inadecvată</strong><br/>
+Respectă întotdeauna limitele de viteza și adaptează viteza la condițiile de drum.</p>
+
+<p><strong>3. Distanță insuficientă față de vehiculul din față</strong><br/>
+Păstrează mereu o distanță de siguranță pentru a putea reacționa la timp.</p>
+
+<p><strong>4. Nefolosirea semnalizării</strong><br/>
+Semnalizează întotdeauna intenția de a schimba direcția sau banda.</p>
+
+<p><strong>5. Distragerea atenției</strong><br/>
+Nu folosi telefonul în timpul conducerii și evită alte distracții.</p>
+`
+},
+'3': {
+title: 'Importanța orelor de condus practice',
+date: '5 Noiembrie 2024',
+image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop',
+content: `
+<p>Orele de condus practice sunt fundamentul unei pregătiri complete pentru obținerea permisului de conducere și pentru a deveni un șofer sigur și responsabil.</p>
+
+<p><strong>De ce sunt importante orele practice?</strong></p>
+
+<p><strong>1. Dezvoltarea reflexelor</strong><br/>
+Doar prin practică poți dezvolta reflexele necesare pentru a reacționa corect în diverse situații de trafic.</p>
+
+<p><strong>2. Înțelegerea comportamentului mașinii</strong><br/>
+Fiecare vehicul se comportă diferit. Orele practice te ajută să înțelegi cum răspunde mașina la comenzile tale.</p>
+
+<p><strong>3. Experiență în trafic real</strong><br/>
+Teoria este importantă, dar experiența în trafic real este de neînlocuit.</p>
+`
+}
+};
+
+const modal = document.getElementById('blogModal');
+const modalClose = document.querySelector('.modal-close');
+
+document.querySelectorAll('.blog-card').forEach(card => {
+card.addEventListener('click', () => {
+const blogId = card.getAttribute('data-blog');
+if (blogId && blogPosts[blogId]) {
+const post = blogPosts[blogId];
+
+const modalImage = document.getElementById('modalImage');
+const modalTitle = document.getElementById('modalTitle');
+const modalDate = document.getElementById('modalDate');
+const modalText = document.getElementById('modalText');
+
+if (modalImage) modalImage.src = post.image;
+if (modalTitle) modalTitle.textContent = post.title;
+if (modalDate) modalDate.textContent = post.date;
+if (modalText) modalText.innerHTML = post.content;
+
+if (modal) modal.classList.add('show');
+}
+});
+});
+
+if (modalClose) {
+modalClose.addEventListener('click', () => {
+if (modal) modal.classList.remove('show');
+});
+}
+
+window.addEventListener('click', (e) => {
+if (e.target === modal) {
+if (modal) modal.classList.remove('show');
+}
+});
 </script>
 </MainLayout>
-
