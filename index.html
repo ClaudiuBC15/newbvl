@@ -111,8 +111,18 @@ align-items: center;
 .logo {
 display: flex;
 align-items: center;
-gap: 10px;
+gap: 15px;
 animation: fadeInDown 0.8s ease;
+text-decoration: none;
+cursor: pointer;
+padding: 8px 12px;
+border-radius: 12px;
+transition: all 0.3s ease;
+}
+
+.logo:hover {
+background: rgba(220, 38, 38, 0.1);
+transform: scale(1.05);
 }
 
 @keyframes fadeInDown {
@@ -127,19 +137,19 @@ transform: translateY(0);
 }
 
 .logo img {
-height: 50px;
+height: 70px;
 width: auto;
 filter: drop-shadow(0 0 10px rgba(220, 38, 38, 0.5));
 transition: all 0.3s;
 }
 
-.logo img:hover {
+.logo:hover img {
 filter: drop-shadow(0 0 20px rgba(220, 38, 38, 0.8));
-transform: scale(1.05) rotate(5deg);
+transform: rotate(5deg);
 }
 
 .logo-text {
-font-size: 20px;
+font-size: 24px;
 font-weight: 800;
 font-family: 'Montserrat', sans-serif;
 background: linear-gradient(135deg, #dc2626 0%, #ff4444 100%);
@@ -1855,11 +1865,11 @@ font-size: 20px;
 }
 
 .logo img {
-height: 45px;
+height: 55px;
 }
 
 .logo-text {
-font-size: 18px;
+font-size: 20px;
 }
 
 html {
@@ -1905,10 +1915,10 @@ scroll-behavior: smooth;
 <!-- Header -->
 <header class="header">
 <nav class="nav-container">
-<div class="logo">
-<img src="https://i.imgur.com/G5IHJr2.png" alt="Start Drive BVL Logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%23dc2626%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2240%22 fill=%22white%22 font-weight=%22bold%22%3ESD%3C/text%3E%3C/svg%3E'" />
-<span class="logo-text">START DRIVE</span>
-</div>
+<a href="#home" class="logo">
+<img src="https://i.imgur.com/pzRXduP.png" alt="Start Drive BVL Logo" />
+<span class="logo-text">Scoala de Soferie</span>
+</a>
 <ul class="nav-menu" id="navMenu">
 <li><a href="#home">Acasă</a></li>
 <li><a href="#categorii">Categorii</a></li>
@@ -2928,4 +2938,3 @@ if (modal) modal.classList.remove('show');
 });
 </script>
 </MainLayout>
-
