@@ -1,0 +1,49 @@
+---
+import '../../generated/fonts.css';
+import '../site-components/global.css';
+import '../styles/global.css';
+
+const { pageClass = '' } = Astro.props;
+---
+
+<html lang="ro" class={pageClass}>
+<head>
+<meta charset="utf-8" />
+<link rel="icon" type="image/png" href="https://i.imgur.com/pzRXduP.png" />
+<link rel="apple-touch-icon" href="https://i.imgur.com/pzRXduP.png" />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+<title>Școala de Șoferi Start Drive Suceava - Permis Auto Categorii B, C, CE</title>
+<meta name="description" content="Școala de șoferi Start Drive din Suceava - Cursuri pentru permis auto categorii B, B1, BE, C, CE. Instructori experimentați, mașini moderne, rata de succes 85%. Înscrie-te acum!" />
+<meta name="keywords" content="scoala soferi suceava, permis auto suceava, categoria b suceava, instructori auto suceava, start drive" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Școala de Șoferi | Start Drive BVL Suceava" />
+<meta property="og:description" content="Obține-ți permisul auto cu încredere! Peste 500 de absolvenți fericiți. Cursuri pentru toate categoriile de permis." />
+<meta property="og:image" content="https://i.imgur.com/pzRXduP.png" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Școala de Șoferi Start Drive Suceava" />
+<meta name="twitter:description" content="Obține-ți permisul auto cu încredere! Peste 500 de absolvenți fericiți." />
+<meta name="twitter:image" content="https://i.imgur.com/pzRXduP.png" />
+</head>
+<!-- Dark mode class injection point - will be replaced with `dark` class based on your site palette -->
+<body class="__DARK_MODE_CLASS__">
+<slot />
+</body>
+</html>
+
+<style is:global>
+/* Page-specific overrides */
+html.splash main { 
+display: flex !important; 
+}
+
+html.splash ol,
+html.splash ul { 
+padding-left: 0 !important; 
+margin: 0 !important; 
+}
+</style>
